@@ -1,0 +1,7 @@
+# Changes are centrally managed in the https://gitlab.com/ayko/client/cpl/home-fire-uk/shopify-tm/-/blob/gitlab-ci/.gitlab-ci.yml
+# to easier branch wide updates from one commit
+include:
+  - project: 'ayko/client/cpl/home-fire-uk/shopify-tm'
+    file: '.gitlab-ci.yml'
+    ref: 'gitlab-ci'
+
