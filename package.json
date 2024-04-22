@@ -1,0 +1,31 @@
+{
+  "name": "home-fire-uk-shopify",
+  "version": "0.1.0",
+  "description": "Home fire uk Shopify Theme",
+  "scripts": {
+    "start": "run-s shopify:dev",
+    "shopify:dev": "shopify theme dev --store home-fire-uk.myshopify.com",
+    "deploy": "shopify theme push --store home-fire-uk.myshopify.com",
+    "deploy:new": "shopify theme push --store home-fire-uk.myshopify.com --unpublished",
+    "deploy:live": "shopify theme push --store home-fire-uk.myshopify.com --live",
+    "shopify:pull": "shopify theme pull --store home-fire-uk.myshopify.com",
+    "shopify": "shopify",
+    "lint": "run-s -c lint:*",
+    "lint:shopify": "shopify theme check",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "author": "AYKO Digital Limited",
+  "devDependencies": {
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "3.2.4"
+  },
+  "engines": {
+    "npm": ">=10.0.0",
+    "node": ">=20.0.0"
+  }
+}
