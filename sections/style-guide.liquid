@@ -1,0 +1,232 @@
+<div class="page-width color-{{ section.settings.color_scheme }}">
+  <div class="logos">
+    <div class="logo">
+      <img src="{{ settings.logo | image_url: width: '240', height: '48' }}" width="240" height="48">
+    </div>
+  </div>
+
+  <div class="typography">
+    <h2>Typography</h2>
+    <div class="fonts">
+      <div class="desktop">
+        <h1>Heading One</h1>
+        <h2>Heading Two</h2>
+        <h3>Heading Three</h3>
+        <h4>Heading Four</h4>
+        <p>Primary Body Copy</p>
+        <p class="small-text">Secondary Copy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="typography">
+    <h5>Paragraph</h5>
+    <span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut
+    perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+    ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+  </span>
+  </div>
+
+  <div class="colours">
+    <h5>Colours</h5>
+    <div style="display: flex; gap: 20px;">
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-grey)"></div>
+        <span>#373A36</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-orange)"></div>
+        <span>#E35205</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-black)"></div>
+        <span>#1B1B1B</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-white)"></div>
+        <span>#FFF5ED</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-olive)"></div>
+        <span>#5A6158</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-muted-orange)"></div>
+        <span>#D16F3A</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-mid-grey)"></div>
+        <span>#5B5A5A</span>
+      </div>
+      <div class="colour-container">
+        <div class="colour" style="background: var(--color-mink)"></div>
+        <span>#CFB9A6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <h5>Buttons</h5>
+    <div>
+      <div class="dotted-border">
+        <button class="button button--primary">Primary Button</button>
+      </div>
+
+      <div class="dotted-border">
+        <button class="button button--secondary">Secondary Button</button>
+      </div>
+
+      <div class="dotted-border">
+        <button class="button button--tertiary">Tertiarry Button</button>
+      </div>
+
+      <div class="dotted-border">
+        <a class="link">Button</a>
+        <a class="link hover">Button</a>
+        <a class="link active">Button</a>
+      </div>
+
+      <div class="dotted-border qty-dropdown">
+        <details>
+          <summary class="facets__summary">Qty</summary>
+          <p>1</p>
+        </details>
+      </div>
+
+      <div class="dotted-border qty-input">
+        <quantity-input class="quantity">
+          <button class="quantity__button" name="minus" type="button">
+            {% render 'icon-minus' %}
+          </button>
+          <input class="quantity__input" type="number" name="quantity" value="1"/>
+          <button class="quantity__button no-js-hidden" name="plus" type="button">
+            {% render 'icon-plus' %}
+          </button>
+        </quantity-input>
+      </div>
+    </div>
+
+    <div>
+      <div class="dotted-border color-background-2">
+        <button class="button button--primary">Button</button>
+        <button class="button button--primary with-arrow">
+          Button
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+
+      <div class="dotted-border color-background-2">
+        <button class="button button--secondary">Button</button>
+        <button class="button button--secondary with-arrow">
+          Button
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+
+      <div class="dotted-border color-background-2">
+        <button class="button button--tertiary">Button</button>
+        <button class="button button--tertiary with-arrow">
+          Button
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+
+      <div class="dotted-border fields">
+        <div class="field">
+          <input class="field__input" type="text" placeholder="First Name">
+          <label class="field__label">First Name</label>
+        </div>
+        <div class="field">
+          <input class="field__input" type="text" placeholder="First Name" value="James">
+          <label class="field__label">First Name</label>
+        </div>
+      </div>
+
+      <div class="dotted-border checkboxes">
+        <input type="checkbox">
+        <input type="checkbox" checked="checked">
+      </div>
+
+      <div class="dotted-border radio-buttons">
+        <input type="radio">
+        <input type="radio" checked="checked">
+      </div>
+
+      <div class="dotted-border category-buttons">
+      </div>
+
+      <div class="dotted-border heart">
+      </div>
+
+      <div class="dotted-border filters">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+.logos, .fonts {
+display: flex;
+gap: 50px;
+margin-bottom: 30px;
+}
+
+.colours .colour {
+display: block;
+width: 115px;
+height: 115px;
+border-radius: 100%;
+border: 2px solid white;
+margin-bottom: 20px;
+}
+
+.colour-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.buttons > div {
+display: flex;
+gap: 20px;
+padding: 15px;
+}
+
+.dotted-border {
+border: 2px dotted #8EA6CA;
+border-radius: 2px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 15px;
+}
+
+.dotted-border.checkboxes,
+.dotted-border.radio-buttons {
+background: white;
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Styleguide",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Styleguide"
+    }
+  ]
+}
+{% endschema %}
