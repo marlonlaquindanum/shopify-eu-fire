@@ -5,14 +5,14 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_cEpm6K": {
+        "announcement_G8TtVi": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "Get 10% Off When You Refer a Friend",
+            "link": "shopify:\/\/collections"
           }
         },
-        "announcement-bar-0": {
+        "announcement_wwYzgk": {
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
@@ -21,17 +21,13 @@
         }
       },
       "block_order": [
-        "announcement_cEpm6K",
-        "announcement-bar-0"
+        "announcement_G8TtVi",
+        "announcement_wwYzgk"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "color_scheme": "scheme-2",
+        "auto_rotate": true,
+        "change_slides_speed": 5
       }
     },
     "header": {
@@ -42,7 +38,7 @@
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
         "enable_language_selector": true,

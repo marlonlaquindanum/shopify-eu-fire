@@ -2178,6 +2178,10 @@ product-info .loading__spinner:not(.hidden) ~ *,
   box-shadow: 0 0 0 -0.2rem rgb(var(--color-foreground));
 }
 
+.announcement-bar .slider-button {
+  height: 3rem;
+}
+
 .localization-wrapper {
   grid-area: language-currency;
   align-self: center;
@@ -2202,10 +2206,6 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
   .announcement-bar-slider {
     width: 60%;
-  }
-
-  .announcement-bar .slider-button {
-    height: 3.8rem;
   }
 }
 
@@ -2232,10 +2232,10 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .announcement-bar__message {
   text-align: center;
-  padding: 1rem 0;
+  padding: 8px 0;
   margin: 0;
-  letter-spacing: 0.1rem;
-  min-height: 3.8rem;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
