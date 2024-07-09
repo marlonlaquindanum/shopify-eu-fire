@@ -147,6 +147,12 @@
         "logo_image": {
           "label": "Logo"
         },
+        "sticky_banner_logo_image": {
+          "label": "Sticky banner logo"
+        },
+        "transparent_banner_logo_image": {
+          "label": "Transparent banner logo"
+        },
         "logo_width": {
           "label": "Desktop logo width",
           "info": "Logo width is automatically optimized for mobile."
@@ -1070,21 +1076,6 @@
         "logo_help": {
           "content": "Edit your logo in [theme settings](/editor?context=theme&category=logo)."
         },
-        "logo_position": {
-          "label": "Desktop logo position",
-          "options__1": {
-            "label": "Middle left"
-          },
-          "options__2": {
-            "label": "Top left"
-          },
-          "options__3": {
-            "label": "Top center"
-          },
-          "options__4": {
-            "label": "Middle center"
-          }
-        },
         "menu": {
           "label": "Menu"
         },
@@ -1106,6 +1097,9 @@
         },
         "header__1": {
           "content": "Color"
+        },
+        "enable_transparent_header": {
+          "label": "Enable transparent header"
         },
         "menu_color_scheme": {
           "label": "Menu color scheme"
