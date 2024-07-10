@@ -80,10 +80,11 @@
             </details>
           </header-menu>
         {%- else -%}
+          {% assign link_text = link.title | escape | downcase %}
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
+            class="header__menu-item list-menu__item link link--text focus-inset{% if link_text == 'bestsellers' or link_text == 'best sellers' %} highlight{% endif %}"
             {% if link.current %}
               aria-current="page"
             {% endif %}

@@ -16,6 +16,16 @@
         "label": "t:settings_schema.logo.settings.logo_image.label"
       },
       {
+        "type": "image_picker",
+        "id": "sticky_header_logo",
+        "label": "t:settings_schema.logo.settings.sticky_banner_logo_image.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "transparent_header_logo",
+        "label": "t:settings_schema.logo.settings.transparent_banner_logo_image.label"
+      },
+      {
         "type": "range",
         "id": "logo_width",
         "min": 50,
