@@ -2346,7 +2346,13 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: block;
   position: relative;
   background-color: rgb(var(--color-background));
-  padding: 0 4rem;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .header-wrapper {
+    padding: 0 4rem;
+  }
 }
 
 .header-wrapper--border-bottom {
