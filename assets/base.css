@@ -2313,7 +2313,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 /* section-header */
 .section-header.shopify-section-group-header-group {
-  z-index: 3;
+  z-index: 5;
 }
 
 .shopify-section-header-sticky {
@@ -2346,9 +2346,13 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: block;
   position: relative;
   background-color: rgb(var(--color-background));
-  padding: 0 4rem;
+  padding: 0 1.5rem;
 }
-
+@media screen and (min-width: 990px) {
+  .header-wrapper {
+    padding: 0 4rem;
+  }
+}
 .header-wrapper--border-bottom {
   border-bottom: 0.1rem solid var(--color-white);
 }
@@ -2429,12 +2433,10 @@ product-info .loading__spinner:not(.hidden) ~ *,
   .header:not(.header--middle-left, .header--middle-center) .header__inline-menu {
     margin-top: 1.05rem;
   }
-
   .header__heading {
     margin: 0 4rem 0 0;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .header__heading {
     margin: 0 9rem 0 0;
@@ -2490,7 +2492,6 @@ product-info .loading__spinner:not(.hidden) ~ *,
   .header__heading {
     margin: 0;
   }
-
   .header__heading,
   .header__heading-link {
     text-align: center;
@@ -2741,13 +2742,15 @@ details[open] .modal-overlay::after {
 }
 
 details:not([open]) > .header__icon--menu .icon-close,
+details:not([open]) > .header__icon--menu .icon-close-small,
 details[open] > .header__icon--menu .icon-hamburger {
   visibility: hidden;
   opacity: 0;
   transform: scale(0.8);
 }
 
-.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
+.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close,
+.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close-small {
   visibility: hidden;
 }
 
@@ -2803,6 +2806,9 @@ details[open] > .header__submenu {
   .header--middle-left .header__inline-menu {
     margin-left: 0;
   }
+  details[open] > .header__menu-item.list-menu__item {
+    text-decoration-thickness: 0.3rem;
+  }
 }
 
 .header__menu {
@@ -2815,13 +2821,11 @@ details[open] > .header__submenu {
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
-
 @media screen and (min-width: 1300px) {
   .header__menu-item {
     margin: 0 1.5rem;
   }
 }
-
 .header__menu-item:hover {
   color: rgb(var(--color-foreground));
 }

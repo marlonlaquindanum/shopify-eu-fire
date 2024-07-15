@@ -3,12 +3,10 @@
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-{%- endif -%}
-{%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
 
 {%- if settings.cart_type == "drawer" -%}
@@ -37,13 +35,11 @@
     }
   {%- endif -%}
 
-  {%- if section.settings.menu_type_desktop != "drawer" -%}
-    @media screen and (min-width: 990px) {
-      header-drawer {
-        display: none;
-      }
+  @media screen and (min-width: 990px) {
+    header-drawer {
+      display: none;
     }
-  {%- endif -%}
+  }
 
   .menu-drawer-container {
     display: flex;
@@ -102,6 +98,9 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+    details[open] > .header__menu-item {
+      text-underline-offset: calc(1.5rem + {{ section.settings.padding_bottom }}px)
+    }
   }
 {%- endstyle -%}
 
@@ -146,7 +145,7 @@
       assign social_links = true
     endif
   -%}
-  <header class="header header--middle-left header--mobile-{{ section.settings.mobile_logo_position }}{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header header--middle-left header--mobile-{{ section.settings.mobile_logo_position }}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -198,11 +197,7 @@
 
     {%- liquid
       if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
+        render 'header-mega-menu'
       endif
     %}
 
@@ -252,7 +247,7 @@
 {% endif %}
 
 {%- if settings.cart_type == "notification" -%}
-  {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
+  {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: 'mega' -%}
 {%- endif -%}
 
 {% javascript %}
@@ -424,56 +419,10 @@
   "max_blocks": 3,
   "settings": [
     {
-      "type": "select",
-      "id": "logo_position",
-      "options": [
-        {
-          "value": "top-left",
-          "label": "t:sections.header.settings.logo_position.options__2.label"
-        },
-        {
-          "value": "top-center",
-          "label": "t:sections.header.settings.logo_position.options__3.label"
-        },
-        {
-          "value": "middle-left",
-          "label": "t:sections.header.settings.logo_position.options__1.label"
-        },
-        {
-          "value": "middle-center",
-          "label": "t:sections.header.settings.logo_position.options__4.label"
-        }
-      ],
-      "default": "middle-left",
-      "label": "t:sections.header.settings.logo_position.label",
-      "info": "t:sections.header.settings.logo_help.content"
-    },
-    {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
-    },
-    {
-      "type": "select",
-      "id": "menu_type_desktop",
-      "options": [
-        {
-          "value": "dropdown",
-          "label": "t:sections.header.settings.menu_type_desktop.options__1.label"
-        },
-        {
-          "value": "mega",
-          "label": "t:sections.header.settings.menu_type_desktop.options__2.label"
-        },
-        {
-          "value": "drawer",
-          "label": "t:sections.header.settings.menu_type_desktop.options__3.label"
-        }
-      ],
-      "default": "dropdown",
-      "label": "t:sections.header.settings.menu_type_desktop.label",
-      "info": "t:sections.header.settings.menu_type_desktop.info"
     },
     {
       "type": "select",
@@ -532,6 +481,12 @@
       "content": "t:sections.header.settings.mobile_layout.content"
     },
     {
+      "type": "text",
+      "id": "mobile_menu_text",
+      "label": "Mobile menu message",
+      "info": "Message at the top of the mobile menu"
+    },
+    {
       "type": "select",
       "id": "mobile_logo_position",
       "options": [
@@ -587,6 +542,129 @@
     }
   ],
   "blocks": [
+    {
+      "type": "mega-menu",
+      "name": "Mega Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "mainemenu",
+          "label": "Menu Item",
+          "info": "You must input the same text as the collection name you want to display as a dropdown."
+        },
+        {
+          "type": "header",
+          "content": "Child Menu 1"
+        },
+        {
+          "type": "text",
+          "id": "menu_heading1",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "menu_heading_link1",
+          "label": "Heading Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu1",
+          "label": "Menu Item"
+        },
+        {
+          "type": "header",
+          "content": "Child Menu 2"
+        },
+        {
+          "type": "text",
+          "id": "menu_heading2",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "menu_heading_link2",
+          "label": "Heading Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu2",
+          "label": "Menu Item"
+        },
+        {
+          "type": "header",
+          "content": "Child Menu 3"
+        },
+        {
+          "type": "text",
+          "id": "menu_heading3",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "menu_heading_link3",
+          "label": "Heading Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu3",
+          "label": "Menu Item"
+        },
+        {
+          "type": "select",
+          "id": "banner_position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right",
+          "label": "Image Position"
+        },
+        {
+          "type": "header",
+          "content": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "menu_image1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "image_text1",
+          "label": "Image Heading 1"
+        },
+        {
+          "type": "url",
+          "id": "text_link1",
+          "label": "Text Link 1"
+        },
+        {
+          "type": "header",
+          "content": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "menu_image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "image_text2",
+          "label": "Image Heading 2"
+        },
+        {
+          "type": "url",
+          "id": "text_link2",
+          "label": "Text Link 2"
+        }
+      ]
+    },
     {
       "type": "@app"
     }

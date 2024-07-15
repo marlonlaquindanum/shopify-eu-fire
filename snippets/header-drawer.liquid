@@ -5,6 +5,8 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
+{% assign menu_blocks = section.blocks | where: 'type', 'mega-menu' %}
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
@@ -13,25 +15,34 @@
     >
       <span>
         {% render 'icon-hamburger' %}
-        {% render 'icon-close' %}
+        {% render 'icon-close-small' %}
       </span>
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
+            {%- if section.settings.mobile_menu_text -%}
+              <p class="menu-drawer__message">{{ section.settings.mobile_menu_text }}</p>
+            {%- endif -%}
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
+                {% assign megamenu = false %}
+                {% for block in menu_blocks %}
+                  {% if block.settings.mainemenu == link.title %}
+                    {% assign megamenu = true %}
+                    {% assign current_block = block %}
+                  {% endif %}
+                {% endfor %}
                 <li>
-                  {%- if link.links != blank -%}
+                  {% assign link_text = link.title | escape | downcase %}
+                  {%- if megamenu -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}{% if link_text == 'bestsellers' or link_text == 'best sellers' %} highlight{% endif %}"
                       >
                         {{ link.title | escape }}
-                        {% render 'icon-arrow' %}
-                        {% render 'icon-caret' %}
                       </summary>
                       <div
                         id="link-{{ link.handle | escape }}"
@@ -40,70 +51,63 @@
                       >
                         <div class="menu-drawer__inner-submenu">
                           <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                            {% render 'icon-arrow' %}
+                            {% render 'icon-caret' %}
                             {{ link.title | escape }}
                           </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                            {%- for childlink in link.links -%}
-                              <li>
-                                {%- if childlink.links == blank -%}
-                                  <a
-                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                    href="{{ childlink.url }}"
-                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                    {% if childlink.current %}
-                                      aria-current="page"
-                                    {% endif %}
-                                  >
-                                    {{ childlink.title | escape }}
+                          <div class="mega_menu_grid_menu_block">
+                            {% for i in (1..5) %} 
+                              {% capture heading %}menu_heading{{ i }}{% endcapture %}
+                              {% assign menuheading = current_block.settings[heading] %}
+                              {% capture headlink %}menu_heading_link{{ i }}{% endcapture %}
+                              {% assign menuheadinglink = current_block.settings[headlink] %}
+                              {% capture menu %}menu{{ i }}{% endcapture %}
+                              {% assign menuitems = current_block.settings[menu] %}
+                              {% if menuitems != blank or menuheading != blank %}
+                                <div class="mega_menu_block_text">
+                                  {% if menuheading != blank %}
+                                    <h3>
+                                      {% if menuheadinglink != blank %}
+                                        <a href="{{ menuheadinglink }}">{{ menuheading }}</a>
+                                      {% else %}
+                                        {{ menuheading }}
+                                      {% endif %}
+                                    </h3>
+                                  {% endif %}
+                                  <ul{% if menuheading == blank %} class="without_head_list"{% endif %}>
+                                    {% for item in menuitems.links %}
+                                      <li><a href="{{ item.url }}">{{ item.title | escape }}</a></li>
+                                    {% endfor %}
+                                  </ul>
+                                </div>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                          <div class="mega_menu_block_img_block">
+                            {% for i in (1..2) %}
+                              {% capture image %}menu_image{{ i }}{% endcapture %}
+                              {% assign menu_image = current_block.settings[image] %}
+                              {% capture heading %}image_text{{ i }}{% endcapture %}
+                              {% assign banner_heading = current_block.settings[heading] %}
+                              {% capture text_link %}text_link{{ i }}{% endcapture %}
+                              {% assign heading_link = current_block.settings[text_link] %}
+                              <div class="mega_menu_img_block">
+                                {% if heading_link %}
+                                 <a href="{{ heading_link }}">
+                                {% endif %}
+                                {% if menu_image %}
+                                  <div class="mega_menu_img">
+                                    {{ menu_image | image_url: width: menu_image.width, height: menu_image.height | image_tag: alt: banner_heading, loading: 'lazy' }}
+                                  </div>
+                                {% endif %}
+                                {% if banner_heading != blank %}
+                                  <p>{{ banner_heading }}</p>
+                                {% endif %}
+                                {% if heading_link %}
                                   </a>
-                                {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary
-                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
-                                    >
-                                      {{ childlink.title | escape }}
-                                      {% render 'icon-arrow' %}
-                                      {% render 'icon-caret' %}
-                                    </summary>
-                                    <div
-                                      id="childlink-{{ childlink.handle | escape }}"
-                                      class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                                    >
-                                      <button
-                                        class="menu-drawer__close-button link link--text focus-inset"
-                                        aria-expanded="true"
-                                      >
-                                        {% render 'icon-arrow' %}
-                                        {{ childlink.title | escape }}
-                                      </button>
-                                      <ul
-                                        class="menu-drawer__menu list-menu"
-                                        role="list"
-                                        tabindex="-1"
-                                      >
-                                        {%- for grandchildlink in childlink.links -%}
-                                          <li>
-                                            <a
-                                              id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                              href="{{ grandchildlink.url }}"
-                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                              {% if grandchildlink.current %}
-                                                aria-current="page"
-                                              {% endif %}
-                                            >
-                                              {{ grandchildlink.title | escape }}
-                                            </a>
-                                          </li>
-                                        {%- endfor -%}
-                                      </ul>
-                                    </div>
-                                  </details>
-                                {%- endif -%}
-                              </li>
-                            {%- endfor -%}
-                          </ul>
+                                {% endif %}
+                              </div>
+                            {% endfor %}
+                          </div>
                         </div>
                       </div>
                     </details>
@@ -111,13 +115,27 @@
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
                       href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}{% if link_text == 'bestsellers' or link_text == 'best sellers' %} highlight{% endif %}"
                       {% if link.current %}
                         aria-current="page"
                       {% endif %}
                     >
                       {{ link.title | escape }}
                     </a>
+                  {%- endif -%}
+                  {% assign collection_handle = link.url | split: '/' | last %}
+                  {%- if collections[collection_handle].metafields.custom.mobile_navigation_image != blank -%}
+                    <img
+                      src="{{ collections[collection_handle].metafields.custom.mobile_navigation_image | image_url: width: 500}}"
+                      sizes="
+                        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+                        (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                        calc(100vw - 3rem)
+                      "
+                      height="70"
+                      width="150"
+                      loading="lazy"
+                    >
                   {%- endif -%}
                 </li>
               {%- endfor -%}
