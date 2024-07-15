@@ -2348,13 +2348,11 @@ product-info .loading__spinner:not(.hidden) ~ *,
   background-color: rgb(var(--color-background));
   padding: 0 1.5rem;
 }
-
 @media screen and (min-width: 990px) {
   .header-wrapper {
     padding: 0 4rem;
   }
 }
-
 .header-wrapper--border-bottom {
   border-bottom: 0.1rem solid var(--color-white);
 }
@@ -2435,12 +2433,10 @@ product-info .loading__spinner:not(.hidden) ~ *,
   .header:not(.header--middle-left, .header--middle-center) .header__inline-menu {
     margin-top: 1.05rem;
   }
-
   .header__heading {
     margin: 0 4rem 0 0;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .header__heading {
     margin: 0 9rem 0 0;
@@ -2496,7 +2492,6 @@ product-info .loading__spinner:not(.hidden) ~ *,
   .header__heading {
     margin: 0;
   }
-
   .header__heading,
   .header__heading-link {
     text-align: center;
@@ -2811,7 +2806,6 @@ details[open] > .header__submenu {
   .header--middle-left .header__inline-menu {
     margin-left: 0;
   }
-
   details[open] > .header__menu-item.list-menu__item {
     text-decoration-thickness: 0.3rem;
   }
@@ -2827,13 +2821,11 @@ details[open] > .header__submenu {
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
-
 @media screen and (min-width: 1300px) {
   .header__menu-item {
     margin: 0 1.5rem;
   }
 }
-
 .header__menu-item:hover {
   color: rgb(var(--color-foreground));
 }
