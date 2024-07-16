@@ -215,6 +215,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   z-index: 6;
   background-color: rgb(var(--color-background));
 }
+p.menu-drawer__message:empty {
+  display: block;
+}
 .menu-drawer__close-button {
   text-decoration: none;
   display: flex;

@@ -9,7 +9,7 @@
   border-right: 0;
   left: 0;
   overflow-y: auto;
-  padding: 3rem;
+  padding: 4rem;
   position: absolute;
   right: 0;
   top: 100%;
@@ -54,9 +54,11 @@
 }
 @media screen and (min-width: 990px) {
   .mega_menu_grid_menu_block,
-  .mega_menu_block_img_block,
   .mega_menu_grid {
-    gap: 6rem;
+    column-gap: 6rem;
+  }
+  .mega_menu_block_img_block {
+    column-gap: 2rem;
   }
   .mega_menu_grid_menu_block {
     grid-template-columns: repeat(3, minmax(0, auto));
@@ -103,7 +105,9 @@
   width: 100%;
   height: auto;
 }
-
+.mega_menu_block_img_block p {
+  margin-bottom: 0;
+}
 .mega-menu__link {
   color: rgba(var(--color-foreground), 0.75);
   display: block;
