@@ -26,6 +26,7 @@
               <p class="menu-drawer__message">{{ section.settings.mobile_menu_text }}</p>
             {%- endif -%}
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+              <p class="menu-drawer__message">{{ section.settings.mobile_menu_text }}</p>
               {%- for link in section.settings.menu.links -%}
                 {% assign megamenu = false %}
                 {% for block in menu_blocks %}
