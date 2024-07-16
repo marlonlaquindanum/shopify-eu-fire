@@ -2434,11 +2434,14 @@ product-info .loading__spinner:not(.hidden) ~ *,
     margin-top: 1.05rem;
   }
   .header__heading {
+    margin: 0;
+  }
+  .header__heading-link {
     margin: 0 4rem 0 0;
   }
 }
 @media screen and (min-width: 1200px) {
-  .header__heading {
+  .header__heading-link {
     margin: 0 9rem 0 0;
   }
 }

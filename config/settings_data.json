@@ -1,6 +1,6 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/2023_Homefire_Logo_-_Full_White_-_no_strapline_2.svg",
+    "logo": "shopify://shop_images/2023_Homefire_Logo_-_Full_White_-_no_strapline_2.svg",
     "logo_width": 150,
     "color_scheme": "scheme-1",
     "type_header_font": "montserrat_n6",
@@ -99,13 +99,13 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
-    "social_facebook_link": "",
-    "social_instagram_link": "",
-    "social_youtube_link": "",
-    "social_tiktok_link": "",
-    "social_twitter_link": "",
+    "social_facebook_link": "/",
+    "social_instagram_link": "/",
+    "social_youtube_link": "/",
+    "social_tiktok_link": "/",
+    "social_twitter_link": "/",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
@@ -133,9 +133,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -355,7 +353,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
