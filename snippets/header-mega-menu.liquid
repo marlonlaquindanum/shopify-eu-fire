@@ -73,6 +73,8 @@
                         {% assign menu_image = current_block.settings[image] %}
                         {% capture heading %}image_text{{ i }}{% endcapture %}
                         {% assign banner_heading = current_block.settings[heading] %}
+                        {% capture heading %}image_desc{{ i }}{% endcapture %}
+                        {% assign banner_text = current_block.settings[heading] %}
                         {% capture text_link %}text_link{{ i }}{% endcapture %}
                         {% assign heading_link = current_block.settings[text_link] %}
                         <div class="mega_menu_img_block">
@@ -86,6 +88,9 @@
                           {% endif %}
                           {% if banner_heading != blank %}
                             <p>{{ banner_heading }}</p>
+                          {% endif %}
+                          {% if banner_text != blank %}
+                            <div>{{ banner_text }}</div>
                           {% endif %}
                           {% if heading_link %}
                             </a>
