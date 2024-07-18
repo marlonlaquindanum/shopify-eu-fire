@@ -123,39 +123,43 @@
       {%- endif -%}
       {%- if block.type == 'socials' -%}
         <div class="footer-top__icons">
+          {%- if block.settings.show_social -%}
           <div class="footer-icons__social-links">
             <p>{{ 'sections.footer.social_links' | t }}</p>
             {% render 'social-icons' %}
           </div>
-          <div class="footer-icons__accreditions-wrapper">
-            <p>{{ 'sections.footer.accreditations' | t }}</p>
-            <div class="footer-icons__social-accreditions">
-              {%- if block.settings.accreditation_1 -%}
-                <img
-                  src="{{ block.settings.accreditation_1 | image_url: width: 50}}"
-                  height="50"
-                  width="50"
-                  loading="lazy"
-                >
-              {%- endif -%}
-              {%- if block.settings.accreditation_2 -%}
-                <img
-                  src="{{ block.settings.accreditation_2 | image_url: width: 50}}"
-                  height="50"
-                  width="50"
-                  loading="lazy"
-                >
-              {%- endif -%}
-              {%- if block.settings.accreditation_3 -%}
-                <img
-                  src="{{ block.settings.accreditation_3 | image_url: width: 50}}"
-                  height="50"
-                  width="50"
-                  loading="lazy"
-                >
-              {%- endif -%}
+        {%- endif -%}
+          {%- if block.settings.show_accreditations -%}
+            <div class="footer-icons__accreditions-wrapper">
+              <p>{{ 'sections.footer.accreditations' | t }}</p>
+              <div class="footer-icons__social-accreditions">
+                {%- if block.settings.accreditation_1 -%}
+                  <img
+                    src="{{ block.settings.accreditation_1 | image_url: width: 50}}"
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                {%- if block.settings.accreditation_2 -%}
+                  <img
+                    src="{{ block.settings.accreditation_2 | image_url: width: 50}}"
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                {%- if block.settings.accreditation_3 -%}
+                  <img
+                    src="{{ block.settings.accreditation_3 | image_url: width: 50}}"
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
             </div>
-          </div>
+          {% endif %}
         </div>
       {%- endif -%}
     {%-  endfor -%}
