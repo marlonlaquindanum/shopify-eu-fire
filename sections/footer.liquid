@@ -124,11 +124,11 @@
       {%- if block.type == 'socials' -%}
         <div class="footer-top__icons">
           {%- if block.settings.show_social -%}
-          <div class="footer-icons__social-links">
-            <p>{{ 'sections.footer.social_links' | t }}</p>
-            {% render 'social-icons' %}
-          </div>
-        {%- endif -%}
+            <div class="footer-icons__social-links">
+              <p>{{ 'sections.footer.social_links' | t }}</p>
+              {% render 'social-icons' %}
+            </div>
+          {%- endif -%}
           {%- if block.settings.show_accreditations -%}
             <div class="footer-icons__accreditions-wrapper">
               <p>{{ 'sections.footer.accreditations' | t }}</p>
