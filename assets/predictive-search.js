@@ -4,6 +4,7 @@ class PredictiveSearch extends SearchForm {
     this.cachedResults = {};
     this.predictiveSearchResults = this.querySelector('[data-predictive-search]');
     this.allPredictiveSearchInstances = document.querySelectorAll('predictive-search');
+    this.loadMore = {};
     this.isOpen = false;
     this.abortController = new AbortController();
     this.searchTerm = '';
@@ -127,7 +128,7 @@ class PredictiveSearch extends SearchForm {
     // Filter out hidden elements (duplicated page and article resources) thanks
     // to this https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent
     const allVisibleElements = Array.from(this.querySelectorAll('li, button.predictive-search__item')).filter(
-      (element) => element.offsetParent !== null
+      (element) => element.offsetParent !== null,
     );
     let activeElementIndex = 0;
 
@@ -229,6 +230,23 @@ class PredictiveSearch extends SearchForm {
     this.predictiveSearchResults.innerHTML = resultsMarkup;
     this.setAttribute('results', true);
 
+    const visibleResults = this.predictiveSearchResults.querySelectorAll('.predictive-search__product:not(.hide)');
+
+    if (visibleResults.length == 0) {
+      const hiddenResults = this.predictiveSearchResults.querySelectorAll('.predictive-search__product.hide');
+      if (hiddenResults.length > 0) {
+        for (let i = 0; i < 4; i++) {
+          hiddenResults[i].classList.remove('hide');
+        }
+      }
+    }
+    this.loadMore = document.querySelector('.predictive-search__load-more');
+
+    if (this.predictiveSearchResults.querySelectorAll('.predictive-search__product.hide').length > 0) {
+      this.loadMore.classList.remove('hide');
+      this.loadMore.addEventListener('click', this.showMore);
+    }
+
     this.setLiveRegionResults();
     this.open();
   }
@@ -270,7 +288,19 @@ class PredictiveSearch extends SearchForm {
     this.removeAttribute('open');
     this.input.setAttribute('aria-expanded', false);
     this.resultsMaxHeight = false;
-    this.predictiveSearchResults.removeAttribute('style');
+    if (this.predictiveSearchResults) {
+      this.predictiveSearchResults.removeAttribute('style');
+    }
+  }
+
+  showMore() {
+    const hiddenResults = document.querySelectorAll('.predictive-search__product.hide');
+
+    hiddenResults.forEach((result) => {
+      result.classList.remove('hide');
+    });
+
+    document.querySelector('.predictive-search__load-more').classList.add('hide');
   }
 }
 

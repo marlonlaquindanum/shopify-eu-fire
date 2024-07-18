@@ -4,7 +4,7 @@
 
 .search__button {
   left: var(--inputs-border-width);
-  top: 1rem;
+  top: 0.5rem;
 }
 
 .reset__button {
