@@ -14,8 +14,13 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
+  .footer-top__info svg {
+    width: {{ section.settings.logo_width_mobile }}px;
+  }
   @media screen and (min-width: 750px) {
+    .footer-top__info svg {
+      width: {{ section.settings.logo_width }}px;
+    }
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
     }
@@ -29,118 +34,135 @@
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient">
   <div class="footer__content-top section-{{ section.id }}-padding">
-    <div class="footer-top__info">
-      {% render 'icon-logo' %}
-      <div class="footer-info__link-container">
-        {{ section.settings.footer_info }}
-      </div>
-      {%- if section.settings.footer_tel -%}
-        <div class="footer-info__telephone">
-          {% render 'icon-phone' %}{{ section.settings.footer_tel }}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'brand_information' -%}
+        <div class="footer-top__info">
+          {% render 'icon-logo' %}
+          <div class="footer-info__link-container">
+            {{ block.settings.footer_info }}
+          </div>
+          {%- if block.settings.footer_tel != blank -%}
+            <div class="footer-info__telephone">
+              {% render 'icon-phone' %}{{ block.settings.footer_tel }}
+            </div>
+          {%- endif -%}
         </div>
       {%- endif -%}
-    </div>
-    <div class="footer-top__menus">
-      {%- for link in section.settings.menu.links -%}
-        <ul class="list-unstyled small-hide medium-hide">
-          <p class="footer-menu__title">{{ link.title }}</p>
-          {%- if link.links != blank -%}
-            {%- for childlink in link.links -%}
-              <li>
-                <a
-                  href="{{ childlink.url }}"
-                  class="footer-menu__link link link--text focus-inset"
-                >
-                  {{ childlink.title | escape }}
-                </a>
-              </li>
-            {%- endfor -%}
+      {%- if block.type == 'link_list' -%}
+        <div class="footer-top__menus">
+          {%- if block.settings.heading -%}
+            <h3>{{ block.settings.heading }}</h3>
           {%- endif -%}
-        </ul>
-      {%- endfor -%}
-      <div class="footer-menu__accordion color-{{ section.settings.color_scheme }} gradient large-up-hide">
-        <div class="collapsible-content isolate content-container content-container--full-width">
-          <div class="collapsible-content__wrapper content-container">
-            <div class="collapsible-content-wrapper-narrow">
-              <div class="grid grid--1-col collapsible-content__grid">
-                <div class="grid__item">
-                  {%- for link in section.settings.menu.links -%}
-                    <div
-                      class="accordion content-container color-{{ section.settings.container_color_scheme }} gradient"
-                    >
-                      <details
-                        id="Details-menu-{{ forloop.index }}-{{ section.id }}"
+          <div class="footer-menu__linklists">
+            {%- for link in block.settings.menu.links -%}
+              <ul class="list-unstyled small-hide medium-hide">
+                <p class="footer-menu__title">{{ link.title }}</p>
+                {%- if link.links != blank -%}
+                  {%- for childlink in link.links -%}
+                    <li>
+                      <a
+                        href="{{ childlink.url }}"
+                        class="footer-menu__link link link--text focus-inset"
                       >
-                        <summary id="Summary-menu-{{ forloop.index }}-{{ section.id }}">
-                          <p class="accordion__title inline-richtext">
-                            {{ link.title }}
-                          </p>
-                          {% render 'icon-caret' %}
-                        </summary>
-                        <div
-                          class="accordion__content rte"
-                          id="CollapsibleAccordion-menu-{{ forloop.index }}-{{ section.id }}"
-                          role="region"
-                          aria-labelledby="Summary-menu-{{ forloop.index }}-{{ section.id }}"
-                        >
-                          {%- if link.links != blank -%}
-                            {%- for childlink in link.links -%}
-                              <li>
-                                <a
-                                  href="{{ childlink.url }}"
-                                  class="footer-menu__link link link--text focus-inset"
-                                >
-                                  {{ childlink.title | escape }}
-                                </a>
-                              </li>
-                            {%- endfor -%}
-                          {%- endif -%}
-                        </div>
-                      </details>
-                    </div>
+                        {{ childlink.title | escape }}
+                      </a>
+                    </li>
                   {%- endfor -%}
+                {%- endif -%}
+              </ul>
+            {%- endfor -%}
+          </div>
+          <div class="footer-menu__accordion color-{{ block.settings.color_scheme }} gradient large-up-hide">
+            <div class="collapsible-content isolate content-container content-container--full-width">
+              <div class="collapsible-content__wrapper content-container">
+                <div class="collapsible-content-wrapper-narrow">
+                  <div class="grid grid--1-col collapsible-content__grid">
+                    <div class="grid__item">
+                      {%- for link in block.settings.menu.links -%}
+                        <div
+                          class="accordion content-container color-{{ block.settings.container_color_scheme }} gradient"
+                        >
+                          <details
+                            id="Details-menu-{{ forloop.index }}-{{ block.id }}"
+                          >
+                            <summary id="Summary-menu-{{ forloop.index }}-{{ block.id }}">
+                              <p class="accordion__title inline-richtext">
+                                {{ link.title }}
+                              </p>
+                              {% render 'icon-caret' %}
+                            </summary>
+                            <div
+                              class="accordion__content rte"
+                              id="CollapsibleAccordion-menu-{{ forloop.index }}-{{ block.id }}"
+                              role="region"
+                              aria-labelledby="Summary-menu-{{ forloop.index }}-{{ block.id }}"
+                            >
+                              {%- if link.links != blank -%}
+                                {%- for childlink in link.links -%}
+                                  <li>
+                                    <a
+                                      href="{{ childlink.url }}"
+                                      class="footer-menu__link link link--text focus-inset"
+                                    >
+                                      {{ childlink.title | escape }}
+                                    </a>
+                                  </li>
+                                {%- endfor -%}
+                              {%- endif -%}
+                            </div>
+                          </details>
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-top__icons">
-      <div class="footer-icons__social-links">
-        <p>{{ 'sections.footer.social_links' | t }}</p>
-        {% render 'social-icons' %}
-      </div>
-      <div class="footer-icons__accreditions-wrapper">
-        <p>{{ 'sections.footer.accreditations' | t }}</p>
-        <div class="footer-icons__social-accreditions">
-          {%- if section.settings.accreditation_1 -%}
-            <img
-              src="{{ section.settings.accreditation_1 | image_url: width: 50}}"
-              height="50"
-              width="50"
-              loading="lazy"
-            >
+      {%- endif -%}
+      {%- if block.type == 'socials' -%}
+        <div class="footer-top__icons">
+          {%- if block.settings.show_social -%}
+            <div class="footer-icons__social-links">
+              <p>{{ 'sections.footer.social_links' | t }}</p>
+              {% render 'social-icons' %}
+            </div>
           {%- endif -%}
-          {%- if section.settings.accreditation_2 -%}
-            <img
-              src="{{ section.settings.accreditation_2 | image_url: width: 50}}"
-              height="50"
-              width="50"
-              loading="lazy"
-            >
-          {%- endif -%}
-          {%- if section.settings.accreditation_3 -%}
-            <img
-              src="{{ section.settings.accreditation_3 | image_url: width: 50}}"
-              height="50"
-              width="50"
-              loading="lazy"
-            >
-          {%- endif -%}
+          {%- if block.settings.show_accreditations -%}
+            <div class="footer-icons__accreditions-wrapper">
+              <p>{{ 'sections.footer.accreditations' | t }}</p>
+              <div class="footer-icons__social-accreditions">
+                {%- if block.settings.accreditation_1 -%}
+                  <img
+                    src="{{ block.settings.accreditation_1 | image_url: width: 50}}"
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                {%- if block.settings.accreditation_2 -%}
+                  <img
+                    src="{{ block.settings.accreditation_2 | image_url: width: 50}}"
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                {%- if block.settings.accreditation_3 -%}
+                  <img
+                    src="{{ block.settings.accreditation_3 | image_url: width: 50}}"
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
+            </div>
+          {% endif %}
         </div>
-      </div>
-    </div>
+      {%- endif -%}
+    {%-  endfor -%}
   </div>
   <div
     class="footer__content-bottom"
@@ -149,86 +171,6 @@
     {% endif %}
   >
     <div class="footer__content-bottom-wrapper">
-      <div class="footer__column footer__localization isolate">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select
-                  class="localization-selector link"
-                  name="country_code"
-                  aria-labelledby="FooterCountryLabelNoScript"
-                >
-                  {%- for country in localization.available_countries -%}
-                    <option
-                      value="{{ country.iso_code }}"
-                      {%- if country.iso_code == localization.country.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ country.name }} ({{ country.currency.iso_code }}
-                      {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-          <localization-form>
-            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'FooterCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                <select
-                  class="localization-selector link"
-                  name="locale_code"
-                  aria-labelledby="FooterLanguageLabelNoScript"
-                >
-                  {%- for language in localization.available_languages -%}
-                    <option
-                      value="{{ language.iso_code }}"
-                      lang="{{ language.iso_code }}"
-                      {%- if language.iso_code == localization.language.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form>
-            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterLanguageLabel">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
       <div class="footer__column footer__column--info">
         {%- if section.settings.payment_enable -%}
           <div class="footer__payment">
@@ -271,6 +213,88 @@
 {% schema %}
 {
   "name": "t:sections.footer.name",
+
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        }
+      ]
+    },
+    {
+      "type": "brand_information",
+      "name": "t:sections.footer.blocks.brand_information.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.footer.settings.header__1.content"
+        },
+        {
+          "type": "richtext",
+          "id": "footer_info",
+          "label": "t:sections.footer.settings.footer_info.label",
+          "info": "t:sections.footer.settings.footer_info.info"
+        },
+        {
+          "type": "text",
+          "id": "footer_tel",
+          "label": "t:sections.footer.settings.footer_tel.label"
+        }
+      ]
+    },
+    {
+      "type": "socials",
+      "name": "t:sections.footer.blocks.socials.name",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "t:sections.footer.settings.show_social.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer.settings.header__4.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_accreditations",
+          "default": true,
+          "label": "t:sections.footer.settings.show_accreditations.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "accreditation_1",
+          "label": "t:sections.footer.settings.image_1.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "accreditation_2",
+          "label": "t:sections.footer.settings.image_2.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "accreditation_3",
+          "label": "t:sections.footer.settings.image_3.label"
+        }
+      ]
+    }
+  ],
   "settings": [
     {
       "type": "color_scheme",
@@ -279,65 +303,24 @@
       "default": "scheme-1"
     },
     {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__1.content"
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 550,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.footer.settings.logo_width.label",
+      "default": 145
     },
     {
-      "type": "richtext",
-      "id": "footer_info",
-      "label": "t:sections.footer.settings.footer_info.label",
-      "info": "t:sections.footer.settings.footer_info.info"
-    },
-    {
-      "type": "text",
-      "id": "footer_tel",
-      "label": "t:sections.footer.settings.footer_tel.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__2.content"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "default": "footer",
-      "label": "t:sections.footer.blocks.link_list.settings.menu.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__3.content",
-      "info": "t:sections.footer.settings.header__3.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_social",
-      "default": true,
-      "label": "t:sections.footer.settings.show_social.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__4.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_accreditations",
-      "default": true,
-      "label": "t:sections.footer.settings.show_accreditations.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "accreditation_1",
-      "label": "t:sections.footer.settings.image_1.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "accreditation_2",
-      "label": "t:sections.footer.settings.image_2.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "accreditation_3",
-      "label": "t:sections.footer.settings.image_3.label"
+      "type": "range",
+      "id": "logo_width_mobile",
+      "min": 50,
+      "max": 550,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.footer.settings.logo_width_mobile.label",
+      "default": 110
     },
     {
       "type": "header",
