@@ -98,6 +98,9 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+    details[open] > .header__menu-item {
+      text-underline-offset: calc(1.5rem + {{ section.settings.padding_bottom }}px)
+    }
   }
 {%- endstyle -%}
 
@@ -416,31 +419,6 @@
   "max_blocks": 3,
   "settings": [
     {
-      "type": "select",
-      "id": "logo_position",
-      "options": [
-        {
-          "value": "top-left",
-          "label": "t:sections.header.settings.logo_position.options__2.label"
-        },
-        {
-          "value": "top-center",
-          "label": "t:sections.header.settings.logo_position.options__3.label"
-        },
-        {
-          "value": "middle-left",
-          "label": "t:sections.header.settings.logo_position.options__1.label"
-        },
-        {
-          "value": "middle-center",
-          "label": "t:sections.header.settings.logo_position.options__4.label"
-        }
-      ],
-      "default": "middle-left",
-      "label": "t:sections.header.settings.logo_position.label",
-      "info": "t:sections.header.settings.logo_help.content"
-    },
-    {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
@@ -503,6 +481,12 @@
       "content": "t:sections.header.settings.mobile_layout.content"
     },
     {
+      "type": "text",
+      "id": "mobile_menu_text",
+      "label": "Mobile menu message",
+      "info": "Message at the top of the mobile menu"
+    },
+    {
       "type": "select",
       "id": "mobile_logo_position",
       "options": [
@@ -558,6 +542,139 @@
     }
   ],
   "blocks": [
+    {
+      "type": "mega-menu",
+      "name": "Mega Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "mainemenu",
+          "label": "Menu Item",
+          "info": "You must input the same text as the collection name you want to display as a dropdown."
+        },
+        {
+          "type": "header",
+          "content": "Child Menu 1"
+        },
+        {
+          "type": "text",
+          "id": "menu_heading1",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "menu_heading_link1",
+          "label": "Heading Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu1",
+          "label": "Menu Item"
+        },
+        {
+          "type": "header",
+          "content": "Child Menu 2"
+        },
+        {
+          "type": "text",
+          "id": "menu_heading2",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "menu_heading_link2",
+          "label": "Heading Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu2",
+          "label": "Menu Item"
+        },
+        {
+          "type": "header",
+          "content": "Child Menu 3"
+        },
+        {
+          "type": "text",
+          "id": "menu_heading3",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "menu_heading_link3",
+          "label": "Heading Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu3",
+          "label": "Menu Item"
+        },
+        {
+          "type": "select",
+          "id": "banner_position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right",
+          "label": "Image Position"
+        },
+        {
+          "type": "header",
+          "content": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "menu_image1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "image_text1",
+          "label": "Image Heading 1"
+        },
+        {
+          "type": "richtext",
+          "id": "image_desc1",
+          "label": "Image Description 1"
+        },
+        {
+          "type": "url",
+          "id": "text_link1",
+          "label": "Text Link 1"
+        },
+        {
+          "type": "header",
+          "content": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "menu_image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "image_text2",
+          "label": "Image Heading 2"
+        },
+        {
+          "type": "richtext",
+          "id": "image_desc2",
+          "label": "Image Description 2"
+        },
+        {
+          "type": "url",
+          "id": "text_link2",
+          "label": "Text Link 2"
+        }
+      ]
+    },
     {
       "type": "@app"
     }

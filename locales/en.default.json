@@ -235,7 +235,7 @@
         "one": "{{ count }} result found for “{{ terms }}”",
         "other": "{{ count }} results found for “{{ terms }}”"
       },
-      "title": "Search results",
+      "title": "Search results for",
       "search_for": "Search for “{{ terms }}”",
       "suggestions": "Suggestions",
       "pages": "Pages"
@@ -305,7 +305,9 @@
       }
     },
     "footer": {
-      "payment": "Payment methods"
+      "payment": "Payment methods",
+      "social_links": "Light Up Your Socials - Follow us!",
+      "accreditations": "Accreditations"
     },
     "featured_blog": {
       "view_all": "View all",
