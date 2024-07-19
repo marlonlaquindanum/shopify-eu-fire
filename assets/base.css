@@ -2378,7 +2378,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
     grid-template-columns: auto 1fr auto;
   }
 
-  .shopify-section:has(> .header-wrapper.header--transparent) ~ #MainContent {
+  .shopify-section:has(> .header-wrapper.header--transparent) ~ #MainContent .section:has(.banner) {
     margin-top: -6.5rem;
   }
 }

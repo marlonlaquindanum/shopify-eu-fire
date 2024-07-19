@@ -1017,7 +1017,7 @@
           "label": "Logo Width"
         },
         "logo_width_mobile": {
-          "label": "Logo Width (Mobile)"
+          "label": "Logo Width"
         },
         "newsletter_enable": {
           "label": "Show email signup"
@@ -2494,6 +2494,18 @@
           "options__2": {
             "label": "2 columns"
           }
+        }
+      }
+    },
+    "main-404": {
+      "name": "404 Page",
+      "settings": {
+        "btn_text": {
+          "label": "Button text",
+          "default": "View Best Sellers"
+        },
+        "btn_link": {
+          "label": "Button link"
         }
       }
     },
