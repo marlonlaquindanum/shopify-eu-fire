@@ -42,9 +42,25 @@
             {{ block.settings.footer_info }}
           </div>
           {%- if block.settings.footer_tel != blank -%}
-            <div class="footer-info__telephone">
-              {% render 'icon-phone' %}{{ block.settings.footer_tel }}
-            </div>
+            {% if block.settings.footer_tel_link != blank %}
+              <a href="{{ block.settings.footer_tel_link }}" class="footer-info__telephone">
+            {% else %}
+              <div class="footer-info__telephone">
+            {% endif %}
+              {% if block.settings.footer_tel_img != blank %}
+                <img
+                  src="{{ block.settings.footer_tel_img | image_url: width: 20}}"
+                  height="20"
+                  width="20"
+                  loading="lazy"
+                >
+              {% endif %}
+              {{ block.settings.footer_tel }}
+            {% if block.settings.footer_tel_link != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -251,9 +267,19 @@
           "info": "t:sections.footer.settings.footer_info.info"
         },
         {
+          "type": "image_picker",
+          "id": "footer_tel_img",
+          "label": "t:sections.footer.settings.footer_tel_img.label"
+        },
+        {
           "type": "text",
           "id": "footer_tel",
           "label": "t:sections.footer.settings.footer_tel.label"
+        },
+        {
+          "type": "url",
+          "id": "footer_tel_link",
+          "label": "t:sections.footer.settings.footer_tel_link.label"
         }
       ]
     },
