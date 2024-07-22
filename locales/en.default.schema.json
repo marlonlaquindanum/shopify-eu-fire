@@ -1131,6 +1131,9 @@
         "menu_color_scheme": {
           "label": "Menu color scheme"
         },
+        "search_color_scheme": {
+          "label": "Search color scheme"
+        },
         "sticky_header_type": {
           "label": "Sticky header",
           "options__1": {

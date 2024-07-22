@@ -215,6 +215,7 @@
       "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
       "page": "Page",
       "products": "Products",
+      "load_more": "View All",
       "results_pages_with_count": {
         "one": "{{ count }} page",
         "other": "{{ count }} pages"
@@ -237,7 +238,7 @@
       },
       "title": "Search results for",
       "search_for": "Search for “{{ terms }}”",
-      "suggestions": "Suggestions",
+      "suggestions": "Categories",
       "pages": "Pages"
     },
     "cart": {
