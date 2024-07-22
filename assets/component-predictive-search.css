@@ -25,10 +25,14 @@
     right: 0;
     left: 0;
     top: 100%;
+    margin-top: -1px;
   }
 }
 
 @media screen and (min-width: 750px) {
+  .predictive-search__results-groups-wrapper {
+    padding-top: 4rem;
+  }
   .predictive-search {
     border-top: none;
     width: calc(100% + 8rem);
