@@ -133,9 +133,9 @@
 -%}
 
 {% if section.settings.sticky_header_type != 'none' %}
-  <sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"  class="header-wrapper gradient{%  unless section.settings.enable_transparent_header %} color-{{ section.settings.color_scheme }}{% endunless %}{%  if section.settings.enable_transparent_header %} header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  <sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"  class="header-wrapper gradient{%  unless section.settings.enable_transparent_header %} color-{{ section.settings.color_scheme }}{% endunless %}{%  if section.settings.enable_transparent_header %} color-scheme-1 header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
 {% else %}
-  <div  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{%  if section.settings.enable_transparent_header %} header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  <div  class="header-wrapper gradient{%  unless section.settings.enable_transparent_header %} color-{{ section.settings.color_scheme }}{% endunless %}{%  if section.settings.enable_transparent_header %} color-scheme-1 header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
 {% endif %}
   {%- liquid
     assign social_links = false
