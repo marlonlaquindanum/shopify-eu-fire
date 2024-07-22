@@ -1045,6 +1045,12 @@
         "footer_tel": {
           "label": "Footer telephone number"
         },
+        "footer_tel_link": {
+          "label": "Footer telephone Link"
+        },
+        "footer_tel_img": {
+          "label": "Footer telephone Image"
+        },
         "show_social": {
           "label": "Show social media icons"
         },
