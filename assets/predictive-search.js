@@ -128,7 +128,7 @@ class PredictiveSearch extends SearchForm {
     // Filter out hidden elements (duplicated page and article resources) thanks
     // to this https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent
     const allVisibleElements = Array.from(this.querySelectorAll('li, button.predictive-search__item')).filter(
-      (element) => element.offsetParent !== null
+      (element) => element.offsetParent !== null,
     );
     let activeElementIndex = 0;
 
@@ -244,7 +244,12 @@ class PredictiveSearch extends SearchForm {
 
     if (this.predictiveSearchResults.querySelectorAll('.predictive-search__product.hide').length > 0) {
       this.loadMore.classList.remove('hide');
-      this.loadMore.addEventListener('click', this.showMore);
+      this.loadMore.addEventListener('click', () => {
+        document.querySelectorAll('.predictive-search__product.hide').forEach((result) => {
+          result.classList.remove('hide');
+        });
+        document.querySelector('.predictive-search__load-more').classList.add('hide');
+      });
     }
 
     this.setLiveRegionResults();
@@ -291,13 +296,6 @@ class PredictiveSearch extends SearchForm {
     if (this.predictiveSearchResults) {
       this.predictiveSearchResults.removeAttribute('style');
     }
-  }
-
-  showMore() {
-    document.querySelectorAll('.predictive-search__product.hide').forEach((result) => {
-      result.classList.remove('hide');
-    });
-    document.querySelector('.predictive-search__load-more').classList.add('hide');
   }
 }
 
