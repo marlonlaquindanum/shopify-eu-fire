@@ -17,7 +17,7 @@
     {%- endif -%}
     {%- if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 -%}
       <div>
-        <h2 id="predictive-search-queries" class="predictive-search__heading text-body caption-with-letter-spacing">
+        <h2 id="predictive-search-queries" class="predictive-search__heading text-body">
           {{- 'templates.search.suggestions' | t -}}
         </h2>
         <ul
@@ -36,7 +36,7 @@
               <a href="{{ query.url }}" class="predictive-search__item link link--text" tabindex="-1">
                 <div class="predictive-search__item-content predictive-search__item-content--centered">
                   <p
-                    class="predictive-search__item-heading predictive-search__item-query-result h5"
+                    class="predictive-search__item-heading predictive-search__item-query-result"
                     aria-label="{{ query.text }}"
                   >
                     {{ query.styled_text }}
@@ -54,7 +54,7 @@
             >
               <a href="{{ collection.url }}" class="predictive-search__item link link--text" tabindex="-1">
                 <div class="predictive-search__item-content predictive-search__item-content--centered">
-                  <p class="predictive-search__item-heading h5">{{ collection.title | escape }}</p>
+                  <p class="predictive-search__item-heading">{{ collection.title | escape }}</p>
                 </div>
               </a>
             </li>
@@ -66,7 +66,7 @@
       <div class="predictive-search__pages-wrapper">
         <h2
           id="predictive-search-pages-desktop"
-          class="predictive-search__heading text-body caption-with-letter-spacing"
+          class="predictive-search__heading text-body"
         >
           {{- 'templates.search.pages' | t -}}
         </h2>
@@ -85,7 +85,7 @@
             >
               <a href="{{ page.url }}" class="predictive-search__item link link--text" tabindex="-1">
                 <div class="predictive-search__item-content predictive-search__item-content--centered">
-                  <p class="predictive-search__item-heading h5">{{ page.title | escape }}</p>
+                  <p class="predictive-search__item-heading">{{ page.title | escape }}</p>
                 </div>
               </a>
             </li>
@@ -99,7 +99,7 @@
             >
               <a href="{{ article.url }}" class="predictive-search__item link link--text" tabindex="-1">
                 <div class="predictive-search__item-content predictive-search__item-content--centered">
-                  <p class="predictive-search__item-heading h5">{{ article.title | escape }}</p>
+                  <p class="predictive-search__item-heading">{{ article.title | escape }}</p>
                 </div>
               </a>
             </li>
@@ -117,12 +117,15 @@
       <div class="predictive-search__result-group">
         {%- if predictive_search.resources.products.size > 0 -%}
           <div>
-            <h2
-              id="predictive-search-products"
-              class="predictive-search__heading text-body caption-with-letter-spacing"
-            >
-              {{- 'templates.search.products' | t -}}
-            </h2>
+            <div class="predictive-search__heading-wrapper">
+              <h2
+                id="predictive-search-products"
+                class="predictive-search__heading text-body"
+              >
+                {{- 'templates.search.products' | t -}}
+              </h2>
+              <span class="predictive-search__load-more hide">{{- 'templates.search.load_more' | t -}}</span>
+            </div>
             <ul
               id="predictive-search-results-products-list"
               class="predictive-search__results-list list-unstyled"
@@ -132,37 +135,17 @@
               {%- for product in predictive_search.resources.products -%}
                 <li
                   id="predictive-search-option-product-{{ forloop.index }}"
-                  class="predictive-search__list-item"
+                  class="predictive-search__list-item predictive-search__product hide"
                   role="option"
                   aria-selected="false"
                 >
-                  <a
-                    href="{{ product.url }}"
-                    class="predictive-search__item predictive-search__item--link-with-thumbnail link link--text"
-                    tabindex="-1"
-                  >
-                    {%- if product.featured_media != blank -%}
-                      <img
-                        class="predictive-search__image"
-                        src="{{ product.featured_media | image_url: width: 150 }}"
-                        alt="{{ product.featured_media.alt }}"
-                        width="50"
-                        height="{{ 50 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
-                      >
-                    {%- endif -%}
-                    <div class="predictive-search__item-content{% unless settings.predictive_search_show_vendor or settings.predictive_search_show_price %} predictive-search__item-content--centered{% endunless %}">
-                      {%- if settings.predictive_search_show_vendor -%}
-                        <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-                        <div class="predictive-search__item-vendor caption-with-letter-spacing">
-                          {{ product.vendor }}
-                        </div>
-                      {%- endif -%}
-                      <p class="predictive-search__item-heading h5">{{ product.title | escape }}</p>
-                      {%- if settings.predictive_search_show_price -%}
-                        {% render 'price', product: product, use_variant: true, show_badges: false %}
-                      {%- endif -%}
-                    </div>
-                  </a>
+                  {% render 'card-product',
+                    card_product: product,
+                    media_aspect_ratio: "portrait",
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    section_id: 'search'
+                  %}
                 </li>
               {%- endfor -%}
             </ul>
@@ -172,7 +155,7 @@
           <div class="predictive-search__pages-wrapper">
             <h2
               id="predictive-search-pages-mobile"
-              class="predictive-search__heading text-body caption-with-letter-spacing"
+              class="predictive-search__heading text-body"
             >
               {{- 'templates.search.pages' | t -}}
             </h2>
@@ -191,7 +174,7 @@
                 >
                   <a href="{{ page.url }}" class="predictive-search__item link link--text" tabindex="-1">
                     <div class="predictive-search__item-content predictive-search__item-content--centered">
-                      <p class="predictive-search__item-heading h5">{{ page.title | escape }}</p>
+                      <p class="predictive-search__item-heading">{{ page.title | escape }}</p>
                     </div>
                   </a>
                 </li>
@@ -205,7 +188,7 @@
                 >
                   <a href="{{ article.url }}" class="predictive-search__item link link--text" tabindex="-1">
                     <div class="predictive-search__item-content predictive-search__item-content--centered">
-                      <p class="predictive-search__item-heading h5">{{ article.title | escape }}</p>
+                      <p class="predictive-search__item-heading">{{ article.title | escape }}</p>
                     </div>
                   </a>
                 </li>
@@ -220,20 +203,6 @@
     {%- endif -%}
 
     {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
-
-    <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
-      <button
-        class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow"
-        tabindex="-1"
-        role="option"
-        aria-selected="false"
-      >
-        <span data-predictive-search-search-for-text>
-          {{- 'templates.search.search_for' | t: terms: predictive_search.terms -}}
-        </span>
-        {% render 'icon-arrow' %}
-      </button>
-    </div>
   </div>
 
   <span class="hidden" data-predictive-search-live-region-count-value>
