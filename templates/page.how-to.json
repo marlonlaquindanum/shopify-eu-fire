@@ -1,14 +1,54 @@
 {
   "sections": {
+    "image_with_text_wVY8Gi": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_R8BN3V": {
+          "type": "heading",
+          "settings": {
+            "heading": "How To Light A Log Fire",
+            "heading_size": "h1"
+          }
+        },
+        "text_AWDd6D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We all enjoy the sight and sound of crackling fireplace logs warming our living rooms through the harsh winter months. But there's no single way to make the perfect log fire, and like many things, it will come with practice. Remember that all fireplaces, fuels, and wood-burning appliances are different, so it may take a few tries to find out what is right for you.<\/p><p>We hope you find the following advice helpful and keep your log fire roaring all through the winter!<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_R8BN3V",
+        "text_AWDd6D"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_16.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-18b45cbf-84d4-4605-8396-6e9eceba0e31",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
+        "color_scheme": "scheme-2",
         "padding_top": 28,
         "padding_bottom": 28
       }
     }
   },
   "order": [
+    "image_with_text_wVY8Gi",
     "main"
   ]
 }
