@@ -8,7 +8,6 @@
 
 #shopify-section-page strong {
   font-size: 28px;
-  font-weight: 600;
   line-height: 33.6px;
   letter-spacing: 0.1px;
 }
@@ -21,8 +20,11 @@
 
 #shopify-section-page p strong {
   font-size: 12px;
-  font-weight: 600;
   line-height: 16.8px;
+}
+
+#shopify-section-page strong, #shopify-section-page p strong {
+  font-weight: 600;
 }
 
 #shopify-section-page p a {

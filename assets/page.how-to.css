@@ -33,7 +33,7 @@
 
 .checklist-content li::after {
   content: "";
-  background-image: url(./check.png);
+  background-image: url('./check.png') no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
