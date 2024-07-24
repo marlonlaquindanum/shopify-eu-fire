@@ -5,7 +5,7 @@ if( !customElements.get('swiper-slider') ) {
         super();
         this.swiper = new Swiper('.swiper', {
           loop: true,
-          centeredSlides: true,
+          centeredSlides: false,
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
