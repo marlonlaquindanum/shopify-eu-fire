@@ -780,3 +780,31 @@ li[data-address] > h2 {
 .customer .icon-with-text {
   background: var(--color-beige);
 }
+/* BitLogin css */
+div:has(+ .bitlogin-root) {
+  border: 0;
+  position: relative;
+  text-align: center;
+  margin: 3rem 0;
+}
+div:has(+ .bitlogin-root)::before {
+  content: '';
+  background: var(--color-grey);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+}
+div:has(+ .bitlogin-root)::after {
+  content: '';
+  background: var(--color-grey);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+}
+button.scheme-match-outline p {
+  font-weight: var(--font-body-weight);
+}
