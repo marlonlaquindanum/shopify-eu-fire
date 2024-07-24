@@ -4,20 +4,23 @@
   <div class="highlighted-products--wrapper">
     {% assign image_ratio = 'related-products.image_ratio' | t %}
     {% assign image_shape = 'related-products.image_shape' | t %}
-    {% for i in (1..2) %}
-      {%- capture product_index -%}
-        {{ i }}
-      {%- endcapture -%}
-      {% assign product_id = section.settings.product[product_index] %}
-      {% render 'card-product',
-        cart_product: product_id,
-        media_aspect_ratio: image_ratio,
-        image_shape: image_shape,
-        show_secondary_image: true,
-        show_vendor: false,
-        show_rating: true
-      %}
-    {% endfor %}
+
+    {% render 'card-product',
+      card_product: section.settings.product1,
+      media_aspect_ratio: image_ratio,
+      image_shape: image_shape,
+      show_secondary_image: true,
+      show_vendor: false,
+      show_rating: true
+    %}
+    {% render 'card-product',
+      card_product: section.settings.product2,
+      media_aspect_ratio: image_ratio,
+      image_shape: image_shape,
+      show_secondary_image: true,
+      show_vendor: false,
+      show_rating: true
+    %}
   </div>
   <div class="highlighted-products--button">
     {% if section.settings.btn_url != blank %}
