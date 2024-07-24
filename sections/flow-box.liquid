@@ -1,0 +1,149 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-flow-box.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'swiper-slider.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+{% endstyle %}
+<div class="flow-box gradient color-{{ section.settings.color_scheme }}">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="flow-box-header">
+      <div class="flow-box-header__heading-text">
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+      <div class="flow-box-header__sub-text">
+        {% render 'icon-instagram' %}
+        <h4>{{ section.settings.subtext }}</h4>
+      </div>
+    </div>
+    <swiper-slider class="flow-box-items">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'insta_video' %}
+                <div class="swiper-slide">
+                  {% render 'flow-box-media',
+                    video_title: block.settings.video_title,
+                    cover_image: block.settings.cover_image,
+                    video_url: block.settings.video_url
+                  %}
+                </div>
+              {% else %}
+
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </swiper-slider>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.flow-box.name",
+  "tag": "section",
+  "class": "section section-flow-box",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.flow-box.settings.heading.label",
+      "default": "#Heartofyourhome"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "t:sections.flow-box.settings.subtext.label",
+      "default": "homefireuk"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.flow-box.settings.padding_top_desktop.label",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.flow-box.settings.padding_bottom_desktop.label",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.flow-box.settings.padding_top_mobile.label",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.flow-box.settings.padding_bottom_mobile.label",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "insta_video",
+      "name": "t:sections.flow-box.blocks.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "t:sections.flow-box.blocks.cover_image.label"
+        },
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "t:sections.flow-box.blocks.title.label",
+          "default": "tedburycottage"
+        },
+        {
+          "type": "video_url",
+          "id": "video_link",
+          "label": "t:sections.flow-box.blocks.video_link.label",
+          "accept": ["youtube", "vimeo"]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.flow-box.presets.name"
+    }
+  ]
+}
+{% endschema %}

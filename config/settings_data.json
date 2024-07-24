@@ -160,6 +160,162 @@
           "btn_url": "",
           "color_scheme": ""
         }
+      },
+      "video": {
+        "type": "video",
+        "settings": {
+          "heading": "Video",
+          "heading_size": "h1",
+          "enable_video_looping": false,
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "cover_image": "shopify:\/\/shop_images\/cover-image-video.png",
+          "description": "How to light a log fire with Homefire",
+          "full_width": true,
+          "color_scheme": "scheme-2",
+          "padding_top": 36,
+          "padding_bottom": 36
+        }
+      },
+      "image-with-text": {
+        "type": "image-with-text",
+        "blocks": {
+          "heading_DPikQt": {
+            "type": "heading",
+            "settings": {
+              "heading": "How To Light A Log Fire",
+              "heading_size": "h2"
+            }
+          },
+          "caption_T8hyem": {
+            "type": "caption",
+            "settings": {
+              "caption": "We all enjoy the sight and sound of crackling fireplace logs warming our living rooms through the harsh winter months. But there's no single way to make the perfect log fire, and like many things, it will come with practice. Remember that all fireplaces, fuels, and wood-burning appliances are different, so it may take a few tries to find out what is right for you.  We hope you find the following advice helpful and keep your log fire roaring all through the winter!",
+              "text_style": "subtitle",
+              "text_size": "small"
+            }
+          }
+        },
+        "block_order": [
+          "heading_DPikQt",
+          "caption_T8hyem"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Rectangle_16.png",
+          "height": "adapt",
+          "desktop_image_width": "medium",
+          "layout": "image_first",
+          "desktop_content_position": "middle",
+          "desktop_content_alignment": "left",
+          "content_layout": "no-overlap",
+          "section_color_scheme": "scheme-2",
+          "color_scheme": "scheme-18b45cbf-84d4-4605-8396-6e9eceba0e31",
+          "image_behavior": "none",
+          "mobile_content_alignment": "left",
+          "padding_top": 0,
+          "padding_bottom": 0
+        }
+      },
+      "flow-box": {
+        "type": "flow-box",
+        "blocks": {
+          "insta_video_bPt3VU": {
+            "type": "insta_video",
+            "settings": {
+              "cover_image": "shopify:\/\/shop_images\/insta_image_1.png",
+              "video_title": "tedburycottage",
+              "video_link": ""
+            }
+          },
+          "insta_video_6XfLaj": {
+            "type": "insta_video",
+            "settings": {
+              "cover_image": "shopify:\/\/shop_images\/insta_image_2.png",
+              "video_title": "tedburycottage",
+              "video_link": ""
+            }
+          },
+          "insta_video_DkgLBL": {
+            "type": "insta_video",
+            "settings": {
+              "cover_image": "shopify:\/\/shop_images\/insta_image_3.png",
+              "video_title": "tedburycottage",
+              "video_link": ""
+            }
+          },
+          "insta_video_anw6px": {
+            "type": "insta_video",
+            "settings": {
+              "cover_image": "shopify:\/\/shop_images\/insta_image_4.png",
+              "video_title": "tedburycottage",
+              "video_link": ""
+            }
+          },
+          "insta_video_kDMazJ": {
+            "type": "insta_video",
+            "settings": {
+              "cover_image": "shopify:\/\/shop_images\/insta_image_5.png",
+              "video_title": "tedburycottage",
+              "video_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "insta_video_bPt3VU",
+          "insta_video_6XfLaj",
+          "insta_video_DkgLBL",
+          "insta_video_anw6px",
+          "insta_video_kDMazJ"
+        ],
+        "settings": {
+          "color_scheme": "",
+          "heading": "#Heartofyourhome",
+          "subtext": "homefireuk",
+          "padding_top_desktop": 10,
+          "padding_bottom_desktop": 10,
+          "padding_top_mobile": 10,
+          "padding_bottom_mobile": 10
+        }
+      },
+      "email-signup-banner": {
+        "type": "email-signup-banner",
+        "blocks": {
+          "heading_rRAtBJ": {
+            "type": "heading",
+            "settings": {
+              "heading": "Sign up to our newsletter",
+              "heading_size": "h1"
+            }
+          },
+          "paragraph_PqzL9p": {
+            "type": "paragraph",
+            "settings": {
+              "text": "<p>For exclusive discounts and product releases subscribe to our newsletter.<\/p>",
+              "text_style": "body"
+            }
+          },
+          "email_form_9nHnBx": {
+            "type": "email_form",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "heading_rRAtBJ",
+          "paragraph_PqzL9p",
+          "email_form_9nHnBx"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/email-bg.png",
+          "image_overlay_opacity": 0,
+          "show_background_image": true,
+          "image_height": "medium",
+          "desktop_content_position": "middle-left",
+          "show_text_box": false,
+          "desktop_content_alignment": "left",
+          "color_scheme": "",
+          "mobile_content_alignment": "center",
+          "show_text_below": true
+        }
       }
     },
     "content_for_index": [

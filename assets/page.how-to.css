@@ -1,10 +1,10 @@
 .row {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   margin-top: 6rem;
 }
 
 .checklist-content--wrapper {
+  max-width: 48.3rem;
   padding: 2.4rem;
 }
 
@@ -45,7 +45,21 @@
   display: none;
 }
 
+.col-sm, .col-md {
+  width: 100%;
+}
+
+#shopify-section-page .page-width {
+  margin: 6rem 0;
+  padding: 0;
+}
+
 @media screen and (min-width: 750px) {
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .checklist-content--wrapper {
     padding: 4rem;
   }
@@ -57,5 +71,18 @@
 
   .checklist-content {
     margin-bottom: 1.4rem;
+  }
+
+  .col-sm {
+    width: 30%;
+  }
+
+  .col-md {
+    width: 70%;
+  }
+
+  #shopify-section-page .page-width {
+    margin: 0 auto;
+    margin-bottom: 6rem;
   }
 }

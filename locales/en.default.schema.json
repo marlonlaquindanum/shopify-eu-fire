@@ -453,43 +453,6 @@
         "info": "Standard-styled cards have no borders when an image shape is active."
       }
     },
-    "checklist": {
-      "name": "Checklist",
-      "settings": {
-        "heading": {
-          "label": "Heading"
-        },
-        "checklist": {
-          "label": "Checklist"
-        }
-      },
-      "presets": {
-        "name": "Checklist"
-      }
-    },
-    "highlighted-products": {
-      "name": "Highlighted Products",
-      "settings": {
-        "heading": {
-          "label": "Heading"
-        },
-        "product1": {
-          "label": "Product 1"
-        },
-        "product2": {
-          "label": "Product 2"
-        },
-        "btn_text": {
-          "label": "Button Text"
-        },
-        "btn_url": {
-          "label": "Button URL"
-        },
-        "color_scheme": {
-          "label": "Colour scheme"
-        }
-      }
-    },
     "announcement-bar": {
       "name": "Announcement bar",
       "settings": {
@@ -1034,9 +997,6 @@
             }
           }
         },
-        "socials": {
-          "name": "Socials\/Accreditations"
-        },
         "text": {
           "name": "Text",
           "settings": {
@@ -1050,12 +1010,6 @@
         }
       },
       "settings": {
-        "logo_width": {
-          "label": "Logo Width"
-        },
-        "logo_width_mobile": {
-          "label": "Logo Width"
-        },
         "newsletter_enable": {
           "label": "Show email signup"
         },
@@ -1063,45 +1017,21 @@
           "label": "Heading"
         },
         "header__1": {
-          "content": "Footer Info"
+          "content": "Email Signup",
+          "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https:\/\/help.shopify.com\/manual\/customers\/manage-customers)"
         },
         "header__2": {
-          "content": "Footer Menu"
-        },
-        "header__3": {
           "content": "Social media icons",
           "info": "To display your social media accounts, link them in your [theme settings](\/editor?context=theme&category=social%20media)."
-        },
-        "header__4": {
-          "content": "Accreditations"
-        },
-        "footer_info": {
-          "label": "Footer info",
-          "info": "Small paragraph that sits below the logo on the footer"
-        },
-        "footer_tel": {
-          "label": "Footer telephone number"
-        },
-        "footer_tel_link": {
-          "label": "Footer telephone Link"
-        },
-        "footer_tel_img": {
-          "label": "Footer telephone Image"
         },
         "show_social": {
           "label": "Show social media icons"
         },
-        "show_accreditations": {
-          "label": "Show accreditations"
+        "header__3": {
+          "content": "Country\/region selector"
         },
-        "image_1": {
-          "label": "Image 1"
-        },
-        "image_2": {
-          "label": "Image 2"
-        },
-        "image_3": {
-          "label": "Image 3"
+        "header__4": {
+          "info": "To add a country\/region, go to your [market settings.](\/admin\/settings\/markets)"
         },
         "enable_country_selector": {
           "label": "Enable country\/region selector"
@@ -1173,9 +1103,6 @@
         },
         "menu_color_scheme": {
           "label": "Menu color scheme"
-        },
-        "search_color_scheme": {
-          "label": "Search color scheme"
         },
         "sticky_header_type": {
           "label": "Sticky header",
@@ -1837,6 +1764,64 @@
         }
       }
     },
+    "collection-seo-description": {
+      "name": "Seo description",
+      "settings": {
+        "padding_top_desktop": {
+          "label": "Padding top"
+        },
+        "padding_bottom_desktop": {
+          "label": "Padding Bottom"
+        },
+        "padding_top_mobile": {
+          "label": "Padding top(Mobile)"
+        },
+        "padding_bottom_mobile": {
+          "label": "Padding bottom(Mobile)"
+        }
+      },
+      "presets": {
+        "name": "Seo description"
+      }
+    },
+    "flow-box": {
+      "name": "Flow box",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "subtext": {
+          "label": "Subtext"
+        },
+        "padding_top_desktop": {
+          "label": "Padding top"
+        },
+        "padding_bottom_desktop": {
+          "label": "Padding bottom"
+        },
+        "padding_top_mobile": {
+          "label": "Padding top(mobile)"
+        },
+        "padding_bottom_mobile": {
+          "label": "Padding bottom(mobile)"
+        }
+      },
+      "blocks": {
+        "name": "Insta Video",
+        "cover_image": {
+          "label": "Cover image"
+        },
+        "title": {
+          "label": "Video title"
+        },
+        "video_link": {
+          "label": "insta_video_link"
+        }
+      },
+      "presets": {
+        "name": "Insta Video"
+      }
+    },
     "main-collection-product-grid": {
       "name": "Product grid",
       "settings": {
@@ -1913,6 +1898,31 @@
           "options__2": {
             "label": "2 columns"
           }
+        }
+      },
+      "blocks": {
+        "name": "Promotional image block",
+        "promotion_image_header": {
+          "label": "Promotion Block "
+        },
+        "promotion_image": {
+          "label": "Promotion image"
+        },
+        "promotion_video": {
+          "label": "Promotion Video"
+        },
+        "promotion_heading": {
+          "label": "Heading",
+          "default": "Heading Text"
+        },
+        "promotion_url": {
+          "label": "URL"
+        },
+        "promotion_position": {
+          "label": "Promotion block position"
+        },
+        "promotion_icon": {
+          "label": "Promotion block icon"
         }
       }
     },
@@ -2540,18 +2550,6 @@
           "options__2": {
             "label": "2 columns"
           }
-        }
-      }
-    },
-    "main-404": {
-      "name": "404 Page",
-      "settings": {
-        "btn_text": {
-          "label": "Button text",
-          "default": "View Best Sellers"
-        },
-        "btn_link": {
-          "label": "Button link"
         }
       }
     },
