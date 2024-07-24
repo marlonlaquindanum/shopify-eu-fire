@@ -103,10 +103,9 @@
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
-        <h2 class="video-alt--text">{{ section.settings.description }}</h2>
-        <span class="video-play-button">
+        <div class="video-play-button">
           {%- render 'video-play' -%}
-        </span>
+        </div>
       </button>
       <template>
         {%- if section.settings.video == null and section.settings.video_url != null -%}
@@ -146,6 +145,7 @@
         {%- endif -%}
       </template>
     </deferred-media>
+    <h2 class="video-alt--text">{{ section.settings.description }}</h2>
   </div>
 </div>
 

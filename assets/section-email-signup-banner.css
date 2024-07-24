@@ -11,6 +11,8 @@
 
 .email-signup-banner__box .email-signup-banner__heading {
   margin-bottom: 0;
+  font-size: 23px;
+  font-weight: 500;
 }
 
 .email-signup-banner__box > * + .newsletter__subheading {
