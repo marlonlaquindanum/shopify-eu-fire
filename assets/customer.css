@@ -1,15 +1,7 @@
 .customer:not(.account):not(.order) {
   margin: 0 auto;
-  max-width: 33.4rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  text-align: center;
-}
-
-@media screen and (min-width: 750px) {
-  .customer:not(.account):not(.order) {
-    max-width: 47.8rem;
-  }
 }
 
 .customer > h1,
@@ -18,18 +10,15 @@
 }
 
 .customer form {
-  margin-top: 4rem;
+  margin-top: 2.6rem;
 }
 
-.customer button {
-  margin: 4rem 0 1.5rem;
-}
-
-.customer ul {
-  line-height: calc(1 + 0.6 / var(--font-body-scale));
-  padding-left: 4.4rem;
-  text-align: left;
-  margin-bottom: 4rem;
+.customer button,
+.customer a.button {
+  margin: 1.2rem 0 1.6rem;
+  width: 100%;
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
 .customer ul a {
@@ -329,10 +318,45 @@
 }
 
 /* Login */
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.login > div {
+  padding: 5rem 0;
+}
+.login > div:first-child {
+  border-bottom: 1px solid var(--color-grey);
+}
+@media screen and (min-width: 990px) {
+  .login {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .login > div {
+    padding: 0 12.7rem;
+    flex-grow: 1;
+    max-width: 70rem;
+  }
+  .login > div:first-child {
+    border-right: 1px solid var(--color-grey);
+    border-bottom: 0;
+  }
+}
+.login .login__subtitle {
+  margin: 1.6rem 0 2.6rem;
+}
+.login .login__message {
+  padding: 1rem 1.6rem;
+  background: var(--color-olive);
+  color: var(--color-white);
+  border-radius: 0.5rem;
+}
 .login a {
   display: block;
-  margin: 0 auto;
-  width: fit-content;
+  text-align: center;
+  font-weight: var(--font-body-weight);
 }
 
 .login a[href='#recover'] {
@@ -752,4 +776,35 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7),
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
+}
+.customer .icon-with-text {
+  background: var(--color-beige);
+}
+/* BitLogin css */
+div:has(+ .bitlogin-root) {
+  border: 0;
+  position: relative;
+  text-align: center;
+  margin: 3rem 0;
+}
+div:has(+ .bitlogin-root)::before {
+  content: '';
+  background: var(--color-grey);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+}
+div:has(+ .bitlogin-root)::after {
+  content: '';
+  background: var(--color-grey);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+}
+button.scheme-match-outline p {
+  font-weight: var(--font-body-weight);
 }
