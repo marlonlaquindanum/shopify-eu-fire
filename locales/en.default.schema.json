@@ -2315,6 +2315,9 @@
               },
               "options__2": {
                 "label": "Vertical"
+              },
+              "options__3": {
+                "label": "Two Columns"
               }
             },
             "content": {
@@ -2322,6 +2325,7 @@
               "info": "Choose an icon or add an image for each column or row."
             },
             "heading": {
+              "label": "Heading",
               "info": "Leave the heading label blank to hide the icon column."
             },
             "icon_1": {
@@ -2350,6 +2354,33 @@
             },
             "heading_3": {
               "label": "Third heading"
+            },
+            "icon_4": {
+              "label": "Fourth icon"
+            },
+            "image_4": {
+              "label": "Fourth image"
+            },
+            "heading_4": {
+              "label": "Fourth heading"
+            },
+            "icon_5": {
+              "label": "Fifth icon"
+            },
+            "image_5": {
+              "label": "Fifth image"
+            },
+            "heading_5": {
+              "label": "Fifth heading"
+            },
+            "icon_6": {
+              "label": "Sixth icon"
+            },
+            "image_6": {
+              "label": "Sixth image"
+            },
+            "heading_6": {
+              "label": "Sixth heading"
             }
           }
         }

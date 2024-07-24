@@ -417,15 +417,18 @@
     "log_out": "Log out",
     "login_page": {
       "cancel": "Cancel",
-      "create_account": "Create account",
+      "create_account": "Create an Account",
+      "create_account_subtitle": "Don’t have an account with us?",
       "email": "Email",
       "forgot_password": "Forgot your password?",
       "guest_continue": "Continue",
       "guest_title": "Continue as a guest",
       "password": "Password",
       "title": "Login",
+      "subtitle": "Enter email address below to log in.",
       "sign_in": "Sign in",
-      "submit": "Submit"
+      "submit": "Submit",
+      "info_html": "<b>Please Note</b> - You must be logged in or create an account with us in order to place an order."
     },
     "order": {
       "title": "Order {{ name }}",
