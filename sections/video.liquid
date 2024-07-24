@@ -103,8 +103,9 @@
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
-        <span class="deferred-media__poster-button motion-reduce">
-          {%- render 'icon-play' -%}
+        <h2 class="video-alt--text">{{ section.settings.description }}</h2>
+        <span class="video-play-button">
+          {%- render 'video-play' -%}
         </span>
       </button>
       <template>

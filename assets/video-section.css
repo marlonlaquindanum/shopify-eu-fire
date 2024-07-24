@@ -46,3 +46,16 @@
 .video-section__media.media-fit-cover video {
   object-fit: cover;
 }
+
+.video-alt--text {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 42px;
+  color: var(--color-full-white);
+}
+
+.video-play-button {
+  position: absolute;
+  bottom: 12.6rem;
+  left: 4rem;
+}

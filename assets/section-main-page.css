@@ -10,11 +10,13 @@
   font-size: 28px;
   font-weight: 600;
   line-height: 33.6px;
+  letter-spacing: 0.1px;
 }
 
 #shopify-section-page p {
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 4rem;
 }
 
 #shopify-section-page p strong {
