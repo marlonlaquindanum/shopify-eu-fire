@@ -324,7 +324,7 @@
   width: 100%;
 }
 .login > div {
-  padding: 0 5rem;
+  padding: 5rem 0;
 }
 .login > div:first-child {
   border-bottom: 1px solid var(--color-grey);
