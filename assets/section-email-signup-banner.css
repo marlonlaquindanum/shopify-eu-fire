@@ -17,6 +17,7 @@
 
 .email-signup-banner__box > * + .newsletter__subheading {
   margin-top: 2rem;
+  text-align: left;
 }
 
 .email-signup-banner__box .newsletter__subheading p {
