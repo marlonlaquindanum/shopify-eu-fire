@@ -6,6 +6,34 @@
   margin-bottom: 3rem;
 }
 
+#shopify-section-page strong {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+}
+
+#shopify-section-page p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#shopify-section-page p strong {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.8px;
+}
+
+#shopify-section-page p a {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16.8px;
+  padding: 1.6rem 2rem;
+  border: solid 1px var(--color-black);
+  border-radius: 4px;
+  color: var(--color-black);
+  text-decoration: none;
+}
+
 @media screen and (min-width: 750px) {
   .main-page-title {
     margin-bottom: 4rem;

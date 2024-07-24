@@ -2,7 +2,7 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/2023_Homefire_Logo_-_Full_White_-_no_strapline_2.svg",
     "logo_width": 150,
-    "color_scheme": "scheme-1",
+    "color_scheme": "scheme-2",
     "type_header_font": "montserrat_n6",
     "heading_scale": 100,
     "type_body_font": "montserrat_n4",
@@ -131,11 +131,48 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "page": {
+        "type": "page",
+        "settings": {
+          "page": "how-to",
+          "heading_size": "h1",
+          "color_scheme": "scheme-2",
+          "padding_top": 0,
+          "padding_bottom": 36
+        }
+      },
+      "checklist": {
+        "type": "checklist",
+        "settings": {
+          "color_scheme": "scheme-a60945b6-af0b-4fcd-88ac-bf202469e59b",
+          "heading": "Things you will need to light a log fire:",
+          "checklist": "<ul><li>a small hand shovel<\/li><li>a soft brush<\/li><li>a pair of tongs<\/li><li>a poker<\/li><li>metallic container for removing ash and cinders<\/li><li>a lighter or matches<\/li><li><a href=\"\/pages\/contact\" title=\"Contact\">Kindling<\/a><\/li><li><a href=\"\/blogs\/blog\" title=\"Blog\">Firelighters<\/a><\/li><li><a href=\"\/products\/anthracite-beans\" title=\"Anthracite Beans\">Firewood<\/a><\/li><\/ul>"
+        }
+      },
+      "highlighted-products": {
+        "type": "highlighted-products",
+        "settings": {
+          "heading": "Related Products",
+          "product1": "kiln-dried-hardwood-logs-large-bag",
+          "product2": "supapak-kindling",
+          "btn_text": "View all related products",
+          "btn_url": "",
+          "color_scheme": ""
+        }
       }
     },
     "content_for_index": [
 
     ],
+    "blocks": {
+      "18218067344242134805": {
+        "type": "shopify:\/\/apps\/hulk-product-reviews\/blocks\/app\/34006358-52bd-4ec7-8c78-200fe58b77ba",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -202,6 +239,18 @@
           "background": "#cfb9a6",
           "background_gradient": "",
           "text": "#1b1b1b",
+          "button": "#d16f3a",
+          "button_label": "#1b1b1b",
+          "secondary_button_label": "#fff5ed",
+          "shadow": "#fff5ed",
+          "input": "#fff5ed"
+        }
+      },
+      "scheme-a60945b6-af0b-4fcd-88ac-bf202469e59b": {
+        "settings": {
+          "background": "#5a6158",
+          "background_gradient": "",
+          "text": "#fff5ed",
           "button": "#d16f3a",
           "button_label": "#1b1b1b",
           "secondary_button_label": "#fff5ed",

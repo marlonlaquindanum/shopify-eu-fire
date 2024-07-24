@@ -1,9 +1,25 @@
 {{ 'highlighted-products.css' | asset_url | stylesheet_tag }}
-<div class="highlighted-products--container">
+<div class="highlighted-products--container checklist-container color-{{ section.settings.color_scheme }} gradient">
   <h2 class="highlighted-products--heading">{{ section.settings.heading }}</h2>
   <div class="highlighted-products--wrapper">
-    {{ section.settings.product1 }}
-    {{ section.settings.product2 }}
+    {% assign image_ratio = 'related-products.image_ratio' | t %}
+    {% assign image_shape = 'related-products.image_shape' | t %}
+    {% render 'card-product',
+      card_product: section.settings.product1,
+      media_aspect_ratio: image_ratio,
+      image_shape: image_shape,
+      show_secondary_image: true,
+      show_vendor: false,
+      show_rating: true
+    %}
+    {% render 'card-product',
+      card_product: section.settings.product2,
+      media_aspect_ratio: image_ratio,
+      image_shape: image_shape,
+      show_secondary_image: true,
+      show_vendor: false,
+      show_rating: true
+    %}
   </div>
   <div class="highlighted-products--button">
     <a href="{% if section.settings.btn_url != blank %}section.settings.btn_url{% else %}#{% endif %}">

@@ -1,0 +1,40 @@
+.highlighted-products--heading {
+  font-size: 16px;
+  line-height: 19.2px;
+}
+
+.highlighted-products--wrapper {
+  display: flex;
+}
+
+.highlighted-products--button > a {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+  padding: 1.6rem 2rem;
+  text-decoration: none;
+  color: var(--color-black);
+  border: solid 1px var(--color-black);
+  border-radius: 4px;
+}
+
+.highlighted-products--button {
+  display: flex;
+}
+
+.highlighted-products--wrapper > .card-wrapper {
+  margin-right: 2.4rem;
+  width: 17.7rem;
+  height: auto;
+}
+
+.highlighted-products--container {
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 750px) {
+  .highlighted-products--heading {
+    font-size: 23px;
+    line-height: 27.6px;
+  }
+}
