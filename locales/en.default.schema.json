@@ -1017,7 +1017,7 @@
           "label": "Logo Width"
         },
         "logo_width_mobile": {
-          "label": "Logo Width"
+          "label": "Logo Width (Mobile)"
         },
         "newsletter_enable": {
           "label": "Show email signup"
