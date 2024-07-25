@@ -2690,6 +2690,26 @@
         "name": "Email signup"
       }
     },
+    "highlighted-products": {
+      "name": "Highlighted Products",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "product1": {
+          "label": "Product 1"
+        },
+        "product2": {
+          "label": "Product 2"
+        },
+        "btn_text": {
+          "label": "Button Text"
+        },
+        "btn_url": {
+          "label": "Button URL"
+        }
+      }
+    },
     "email-signup-banner": {
       "name": "Email signup banner",
       "settings": {
