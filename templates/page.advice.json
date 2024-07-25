@@ -1,0 +1,242 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "collapsible_content_nMHhgc": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_8MYwr9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does the wet wood ban mean for me?",
+            "icon": "none",
+            "row_content": "<p>From May 1st 2021, you will no longer be able to buy wet wood from any retailer.<\/p>",
+            "page": "flowbox-community-flow"
+          }
+        },
+        "collapsible_row_EXYPMM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do we make our kiln dried wood?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Thaeqa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where do we get our wood from?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Eb3cfK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the Ready to Burn Scheme?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_7UBKRK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "All you need to know about burning firewood",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_8dMHzA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How to light a log fire",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_ctr6mG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the problems of burning wet wood?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_7MUNAg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "A customer's tale: The true cost of burning wet wood",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_FeHc3b": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I burn smokeless coal and kiln dried logs together?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_6jcchw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What fuels can I burn in a multi-fuel stove?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_8MYwr9",
+        "collapsible_row_EXYPMM",
+        "collapsible_row_Thaeqa",
+        "collapsible_row_Eb3cfK",
+        "collapsible_row_7UBKRK",
+        "collapsible_row_8dMHzA",
+        "collapsible_row_ctr6mG",
+        "collapsible_row_7MUNAg",
+        "collapsible_row_FeHc3b",
+        "collapsible_row_6jcchw"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-2",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "email_signup_banner_hgjr9e": {
+      "type": "email-signup-banner",
+      "blocks": {
+        "heading_TAtEHU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sign up to our newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_9iXRbe": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>For exclusive discounts and product releases subscribe to our newsletter.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "email_form_pWbnhk": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_TAtEHU",
+        "paragraph_9iXRbe",
+        "email_form_pWbnhk"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/email-bg.png",
+        "image_overlay_opacity": 0,
+        "show_background_image": true,
+        "image_height": "adapt-image",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "mobile_content_alignment": "left",
+        "show_text_below": false
+      }
+    },
+    "flow_box_WQLnMR": {
+      "type": "flow-box",
+      "blocks": {
+        "insta_video_czUdNa": {
+          "type": "insta_video",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/insta_image_1.png",
+            "video_title": "tedburycottage",
+            "video_link": ""
+          }
+        },
+        "insta_video_XyQehp": {
+          "type": "insta_video",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/insta_image_2.png",
+            "video_title": "tedburycottage",
+            "video_link": ""
+          }
+        },
+        "insta_video_P7wxyN": {
+          "type": "insta_video",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/insta_image_3.png",
+            "video_title": "tedburycottage",
+            "video_link": ""
+          }
+        },
+        "insta_video_wBmGAP": {
+          "type": "insta_video",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/insta_image_4.png",
+            "video_title": "tedburycottage",
+            "video_link": ""
+          }
+        },
+        "insta_video_DHJRtT": {
+          "type": "insta_video",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/insta_image_5.png",
+            "video_title": "tedburycottage",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "insta_video_czUdNa",
+        "insta_video_XyQehp",
+        "insta_video_P7wxyN",
+        "insta_video_wBmGAP",
+        "insta_video_DHJRtT"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "#Heartofyourhome",
+        "subtext": "homefireuk",
+        "padding_top_desktop": 10,
+        "padding_bottom_desktop": 10,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collapsible_content_nMHhgc",
+    "email_signup_banner_hgjr9e",
+    "flow_box_WQLnMR"
+  ]
+}

@@ -3,9 +3,17 @@
   display: inline-block;
 }
 
+.banner__content .email-signup-banner__box {
+  min-height: 45rem;
+}
+
 @media only screen and (min-width: 750px) {
   .email-signup-banner:not(.banner--desktop-transparent) .email-signup-banner__box {
     width: 100%;
+  }
+
+  .banner__content .email-signup-banner__box {
+    min-height: auto;
   }
 }
 
