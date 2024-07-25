@@ -2352,6 +2352,14 @@
               "label": "Third heading"
             }
           }
+        },
+        "add_on": {
+          "name": "Add-on products",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            }
+          }
         }
       },
       "settings": {
@@ -3393,6 +3401,21 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "step-guide": {
+      "name": "Step guide",
+      "blocks": {
+        "column": {
+          "settings": {
+            "step_number": {
+              "label": "Step number"
+            },
+            "show_arrow": {
+              "label": "Show arrow"
+            }
+          }
+        }
       }
     }
   }

@@ -119,6 +119,10 @@
       "sku": "SKU",
       "on_sale": "Sale",
       "product_variants": "Product variants",
+      "add_label": "Add",
+      "subscribe_and_save": "Subscribe & Never Run Out:",
+      "show_more": "Show more",
+      "show_less": "Show less",
       "media": {
         "gallery_viewer": "Gallery Viewer",
         "load_image": "Load image {{ index }} in gallery view",

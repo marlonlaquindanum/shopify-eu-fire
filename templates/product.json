@@ -3,22 +3,27 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
+          "settings": {}
+        },
+        "inventory_LFjCAY": {
+          "type": "inventory",
           "settings": {
+            "text_style": "body",
+            "inventory_threshold": 0,
+            "show_inventory_quantity": false
+          }
+        },
+        "sku_KrCMB4": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
           }
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -29,63 +34,301 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "settings": {}
+        },
+        "add_on_NPh7nq": {
+          "type": "add_on",
           "settings": {
+            "text": "For the perfect fire pair with:"
+          }
+        },
+        "recharge_subscriptions_subscription_widget_brgUbr": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
         "description": {
           "type": "description",
+          "settings": {}
+        },
+        "collapsible_tab_edaNG6": {
+          "type": "collapsible_tab",
           "settings": {
+            "heading": "Specification",
+            "icon": "none",
+            "content": "{{ product.metafields.custom._short_description | metafield_tag }}",
+            "page": ""
           }
         },
-        "share": {
-          "type": "share",
+        "collapsible_tab_TxTqLL": {
+          "type": "collapsible_tab",
           "settings": {
-            "share_label": "Share"
+            "heading": "Delivery",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.delivery_option.value.delivery_options | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "icon_with_text_6MLneV": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "heart",
+            "heading_1": "Click & Collect, Save 15% - collect from your local depot",
+            "icon_2": "return",
+            "heading_2": "Interest Free Payments - Select Paypal Pay Later at checkout",
+            "icon_3": "truck",
+            "heading_3": "Ready to Burn - Low smoke emissions",
+            "icon_4": "heart",
+            "heading_4": "Heading"
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "inventory_LFjCAY",
+        "sku_KrCMB4",
         "price",
         "variant_picker",
         "quantity_selector",
+        "add_on_NPh7nq",
+        "recharge_subscriptions_subscription_widget_brgUbr",
         "buy_buttons",
         "description",
-        "share"
+        "collapsible_tab_edaNG6",
+        "collapsible_tab_TxTqLL",
+        "icon_with_text_6MLneV"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "color_scheme": "scheme-2",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "media_fit": "cover",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
       }
     },
+    "category_flow_en_gb_MQrhmk": {
+      "type": "CategoryFlow-en-GB",
+      "settings": {
+        "Tagflow": "ALL",
+        "taghandle": "",
+        "featured_product": "",
+        "featured_collection": ""
+      }
+    },
+    "17218272795f9abb47": {
+      "type": "apps",
+      "blocks": {
+        "hulk_product_reviews_review_list_cw9E8Y": {
+          "type": "shopify://apps/hulk-product-reviews/blocks/review-list/34006358-52bd-4ec7-8c78-200fe58b77ba",
+          "settings": {}
+        }
+      },
+      "block_order": ["hulk_product_reviews_review_list_cw9E8Y"],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_with_text_HDYRWd": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_h4rkf6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kiln Dried Wood is a brilliant fuel source",
+            "heading_size": "h2"
+          }
+        },
+        "text_F9xAjB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kiln Dried Wood generate beautiful flames and provide excellent heat. These logs contain a low moisture content which is better for the environment and those near the fire. </p><p>For more information on kiln-dried wood, explore the our website.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading_h4rkf6", "text_F9xAjB"],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_16.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-6",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "step_guide_GEBEpK": {
+      "type": "step-guide",
+      "blocks": {
+        "column_nbzC4F": {
+          "type": "column",
+          "settings": {
+            "step": "1",
+            "text": "<p>Make sure your combustion chamber (the area where you light your fire) is clean and free of any debris before starting.</p>",
+            "show_arrow": true
+          }
+        },
+        "column_LpkAeE": {
+          "type": "column",
+          "settings": {
+            "step": "2",
+            "text": "<p>Using <a href=\"#\" title=\"#\">firelighters</a> and <a href=\"#\" title=\"#\">kindling</a>, create a base and start your fire.</p>",
+            "show_arrow": true
+          }
+        },
+        "column_crAPWD": {
+          "type": "column",
+          "settings": {
+            "step": "3",
+            "text": "<p>Once some flames start to appear, place your kiln-dried wood on top, and spread evenly over the kindling and firelighters so air can flow between the logs.</p>",
+            "show_arrow": true
+          }
+        },
+        "column_y4EMbr": {
+          "type": "column",
+          "settings": {
+            "step": "4",
+            "text": "<p>If your fire starts to dwindle, add more logs while moving around the current logs to create more pockets of space for the oxygen to flow.</p>",
+            "show_arrow": true
+          }
+        },
+        "column_gyj3wi": {
+          "type": "column",
+          "settings": {
+            "step": "5",
+            "text": "<p>Once your fire has been extinguished, let the remnants cool down before attempting to clean your combustion chamber so you are prepared for your next fire.</p>",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": ["column_nbzC4F", "column_LpkAeE", "column_crAPWD", "column_y4EMbr", "column_gyj3wi"],
+      "settings": {
+        "title": "How to Use",
+        "heading_size": "h3",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_PGtp9r": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_8aQg3i": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_31.jpg",
+            "title": "Low in tar",
+            "text": "<p>When it comes to wood fuel, our Kiln Dried Logs are the finest that money can buy. Extremely dry, with a Ready to Burn-certified moisture content of less than 20%.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_gL9PRT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_31-1.jpg",
+            "title": "Ready to burn",
+            "text": "<p>These powerful Kiln Dried Logs meet strict quality control guidelines that control the moisture content, size, package volume, species and country of origin.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dqNGMq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_31-2.jpg",
+            "title": "Versatile fuel source",
+            "text": "<p>Ideal for wood burning stoves, multi-fuel stoves, pizza ovens, chimneys or traditional open fires and low in tar so they are better for your appliance</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["column_8aQg3i", "column_gL9PRT", "column_dqNGMq"],
+      "settings": {
+        "title": "Features",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_jTtYtk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PjEwUT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ideal for Pizza Ovens",
+            "heading_size": "h2"
+          }
+        },
+        "text_cd4Rcr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kiln Dried Wood generate beautiful flames and provide excellent heat. These logs contain a low moisture content which is better for the environment and those near the fire. </p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading_PjEwUT", "text_cd4Rcr"],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_16_2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-7",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Latest Summer Deals",
         "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 5,
+        "columns_desktop": 5,
         "color_scheme": "scheme-2",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -98,6 +341,12 @@
   },
   "order": [
     "main",
+    "category_flow_en_gb_MQrhmk",
+    "17218272795f9abb47",
+    "image_with_text_HDYRWd",
+    "step_guide_GEBEpK",
+    "multicolumn_PGtp9r",
+    "image_with_text_jTtYtk",
     "related-products"
   ]
 }

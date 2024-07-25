@@ -1,0 +1,37 @@
+.rebuy-widget .rebuy-product-grid.large-carousel,
+.rebuy-recommended-products .rebuy-product-grid.large-carousel {
+  padding: 0;
+}
+.rebuy-widget .rebuy-product-block,
+.rebuy-recommended-products .rebuy-product-block {
+  padding: 0 10px;
+}
+.rebuy-widget .primary-title,
+.rebuy-recommended-products .primary-title {
+  padding-left: 10px;
+  text-align: left;
+}
+.rebuy-widget .rebuy-product-block .rebuy-product-actions,
+.rebuy-recommended-products .rebuy-product-block .rebuy-product-actions,
+.splide__arrows.rebuy-carousel__arrows,
+.powered-by-rebuy {
+  display: none;
+}
+.rebuy-widget .rebuy-product-block .rebuy-product-info,
+.rebuy-recommended-products .rebuy-product-block .rebuy-product-info {
+  text-align: left;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rebuy-money,
+.rebuy-widget .rebuy-money {
+  color: var(--color-black);
+}
+.rebuy-widget .rebuy-product-block .rebuy-product-media img,
+.rebuy-recommended-products .rebuy-product-block .rebuy-product-media img {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}

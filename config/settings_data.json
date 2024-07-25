@@ -21,8 +21,8 @@
     "buttons_shadow_vertical_offset": 4,
     "buttons_shadow_blur": 5,
     "variant_pills_border_thickness": 1,
-    "variant_pills_border_opacity": 55,
-    "variant_pills_radius": 40,
+    "variant_pills_border_opacity": 40,
+    "variant_pills_radius": 4,
     "variant_pills_shadow_opacity": 0,
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
@@ -134,6 +134,13 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "18218067344242134805": {
+        "type": "shopify://apps/hulk-product-reviews/blocks/app/34006358-52bd-4ec7-8c78-200fe58b77ba",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -193,6 +200,30 @@
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
           "input": "#121212"
+        }
+      },
+      "scheme-6": {
+        "settings": {
+          "background": "#5a6158",
+          "background_gradient": "",
+          "text": "#f6f5f5",
+          "button": "#d16f3a",
+          "button_label": "#1b1b1b",
+          "secondary_button_label": "#fff5ed",
+          "shadow": "#fff5ed",
+          "input": "#fff5ed"
+        }
+      },
+      "scheme-7": {
+        "settings": {
+          "background": "#cfb9a6",
+          "background_gradient": "",
+          "text": "#1b1b1b",
+          "button": "#d16f3a",
+          "button_label": "#1b1b1b",
+          "secondary_button_label": "#fff5ed",
+          "shadow": "#fff5ed",
+          "input": "#c8c8c7"
         }
       }
     }

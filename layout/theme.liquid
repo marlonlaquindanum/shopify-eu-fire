@@ -1,6 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+    <script>
+      (function(d, id) {
+        if (!window.flowbox) { var f = function() { f.q.push(arguments); }; f.q = []; window.flowbox = f; }
+        if (d.getElementById(id)) { return; }
+        var s = d.createElement('script'), fjs = d.scripts[d.scripts.length - 1]; s.id = id; s.async = true;
+        s.src = ' https://connect.getflowbox.com/flowbox.js';
+        fjs.parentNode.insertBefore(s, fjs);
+      })(document, 'flowbox-js-embed');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -34,6 +43,7 @@
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
 
     {{ content_for_header }}
 
@@ -221,14 +231,19 @@
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
 
         --color-grey: #373A36;
+        --color-grey-rgb: 55, 58, 54;
         --color-orange: #E35205;
         --color-black: #1B1B1B;
         --color-white: #FFF5ED;
         --color-menu-grey: #5a615833;
         --color-olive: #5A6158;
+        --color-light-orange: #F3E4D9;
         --color-muted-orange: #D16F3A;
         --color-mid-grey: #5B5A5A;
+        --color-mid-grey-rgb: 91, 90, 90;
         --color-mink: #CFB9A6;
+        --color-green: #0A7D35;
+        --color-red: #CB102E;
       }
 
       *,
@@ -260,6 +275,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'section-collection-flowbox.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -357,5 +373,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script src = "{{ 'flowbox.js' | asset_url }}" defer = "defer"></script>
   </body>
 </html>
