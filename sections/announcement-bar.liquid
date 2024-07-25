@@ -65,6 +65,9 @@
             name="previous"
             aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
             aria-controls="Slider-{{ section.id }}"
+            {% if section.settings.auto_rotate %}
+              style="opacity: 0;"
+            {% endif %}
           >
             {% render 'icon-caret' %}
           </button>
@@ -119,6 +122,9 @@
             name="next"
             aria-label="{{ 'sections.announcements.next_announcement' | t }}"
             aria-controls="Slider-{{ section.id }}"
+            {% if section.settings.auto_rotate %}
+              style="opacity: 0;"
+            {% endif %}
           >
             {% render 'icon-caret' %}
           </button>
