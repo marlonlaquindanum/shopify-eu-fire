@@ -18,6 +18,30 @@
   border-radius: 4px;
 }
 
+.highlighted-products--container .price-review-container {
+  display: grid;
+}
+.highlighted-products--container .price__regular .price-item--regular {
+  display: none;
+}
+
+.highlighted-products--container .price-review-container > div:last-child {
+  order: -1;
+}
+
+.highlighted-products--container .price__sale {
+  display: flex;
+}
+
+.highlighted-products--container .price__sale > span:last-child {
+  order: -1;
+}
+
+.highlighted-products--container .price--on-sale .price-item--regular {
+  margin-left: 1rem;
+  display: none;
+}
+
 .highlighted-products--button {
   display: flex;
 }

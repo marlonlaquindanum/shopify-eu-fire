@@ -1,12 +1,15 @@
 .card-wrapper .card-information .product-description {
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
   font-size: 12px;
   line-height: 14.4px;
   font-weight: 400;
   margin-top: 0;
+}
+
+.card__heading, .card-wrapper .card-information .product-description {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
 }
 
 .card-wrapper .price {
@@ -38,10 +41,6 @@
   position: absolute;
   top: 0.8rem;
   left: 0.8rem;
-}
-
-.price-review-container {
-  display: block;
 }
 
 #hulkapps-reviews-anchor > div > div:not(.hulk-pr__review-icon) {
@@ -90,6 +89,11 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 14.4px;
+}
+
+.highlighted-products--container .price__sale > .price-item--sale > span {
+  border-right: solid 4px var(--color-orange);
+  margin-right: 0.5rem;
 }
 
 @media screen and (min-width: 750px) {
