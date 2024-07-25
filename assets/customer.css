@@ -780,3 +780,22 @@ li[data-address] > h2 {
 .customer .icon-with-text {
   background: var(--color-beige);
 }
+.register h1 {
+  margin: 0;
+}
+.register p {
+  margin: 1.2rem 0 2.6rem;
+}
+.register button + div {
+  text-align: center;
+  width: 100%;
+}
+.register button + div a {
+  text-decoration: none;
+}
+@media only screen and (min-width: 750px) {
+  .register .customer-register__form-wrapper {
+    margin: 0 auto;
+    max-width: 44rem;
+  }
+}
