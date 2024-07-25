@@ -424,15 +424,18 @@
     "log_out": "Log out",
     "login_page": {
       "cancel": "Cancel",
-      "create_account": "Create account",
+      "create_account": "Create an Account",
+      "create_account_subtitle": "Don’t have an account with us?",
       "email": "Email",
       "forgot_password": "Forgot your password?",
       "guest_continue": "Continue",
       "guest_title": "Continue as a guest",
       "password": "Password",
       "title": "Login",
+      "subtitle": "Enter email address below to log in.",
       "sign_in": "Sign in",
-      "submit": "Submit"
+      "submit": "Submit",
+      "info_html": "<b>Please Note</b> - You must be logged in or create an account with us in order to place an order."
     },
     "order": {
       "title": "Order {{ name }}",
@@ -477,11 +480,20 @@
     },
     "register": {
       "title": "Create account",
+      "subtitle": "Follow the steps to create a customer account with us.",
       "first_name": "First name",
       "last_name": "Last name",
       "email": "Email",
       "password": "Password",
-      "submit": "Create"
+      "confirm_password": "Confirm Password",
+      "confirm_password_error": "Password fields do not match",
+      "submit": "Create",
+      "phone": "Telephone",
+      "accepts_marketing": "I would like to receive Homefire newsletters for exclusive discounts and news and product launches.",
+      "accepts_sms": "I would like to receive SMS messages from Homefire",
+      "accepts_phone": "I would like to receive phonecalls from Homefire",
+      "accepts_post": "I would like to receive post from Homefire",
+      "log_in_html": "Already have an account? <a href=\"{{ link }}\">Log in</a>"
     },
     "reset_password": {
       "title": "Reset account password",
