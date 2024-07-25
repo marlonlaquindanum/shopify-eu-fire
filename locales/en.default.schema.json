@@ -1010,6 +1010,12 @@
         }
       },
       "settings": {
+        "logo_width": {
+          "label": "Logo Width"
+        },
+        "logo_width_mobile": {
+          "label": "Logo Width (Mobile)"
+        },
         "newsletter_enable": {
           "label": "Show email signup"
         },
