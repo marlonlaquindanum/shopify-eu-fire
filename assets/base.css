@@ -3638,9 +3638,10 @@ details-disclosure > details {
   column-gap: 2.6rem;
   padding: 1.6rem;
 }
-.icon-with-text--two-column .icon {
+.icon-with-text--two-column .icon,
+.icon-with-text--two-column img {
   max-width: 1.7rem;
-  max-height: 1.7rem;
+  height: auto;
   margin-right: 1rem;
 }
 .icon-with-text--two-column li {
