@@ -1643,38 +1643,63 @@
     },
     "main-article": {
       "name": "Blog post",
+      "settings": {
+        "overlay_opacity": {
+          "label": "Overlay opacity"
+        },
+        "featured_image_mobile": {
+          "label": "Featured image (mobile)",
+          "info": "Replaces the header image on mobile, will crop the desktop image if left blank."
+        },
+        "image_height": {
+          "label": "Featured image height",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
+            "label": "Large"
+          },
+          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+        },
+        "content_size": {
+          "label": "Desktop media width",
+          "info": "Media is automatically optimized for mobile.",
+          "options__1": {
+            "label": "X-Small"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
+            "label": "Large"
+          }
+        },
+        "blog_show_date": {
+          "label": "Show date"
+        },
+        "blog_show_author": {
+          "label": "Show author"
+        },
+        "blog_show_tags": {
+          "label": "Show Tags"
+        }
+      },
       "blocks": {
         "featured_image": {
-          "name": "Featured image",
-          "settings": {
-            "image_height": {
-              "label": "Featured image height",
-              "options__1": {
-                "label": "Adapt to image"
-              },
-              "options__2": {
-                "label": "Small"
-              },
-              "options__3": {
-                "label": "Medium"
-              },
-              "options__4": {
-                "label": "Large"
-              },
-              "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
-            }
-          }
+          "name": "Featured image"
         },
         "title": {
           "name": "Title",
-          "settings": {
-            "blog_show_date": {
-              "label": "Show date"
-            },
-            "blog_show_author": {
-              "label": "Show author"
-            }
-          }
+          "settings": {}
         },
         "content": {
           "name": "Content"
