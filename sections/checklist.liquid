@@ -1,0 +1,35 @@
+{{ 'checklist.css' | asset_url | stylesheet_tag }}
+
+<div class="checklist-container color-{{ section.settings.color_scheme }} gradient">
+  <div class="checklist-content--wrapper">
+    <h2 class="checklist-heading">{{ section.settings.heading }}</h2>
+    <div class="checklist-content">{{ section.settings.checklist }}</div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.checklist.name",
+  "class": "section section-checklist",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.checklist.settings.heading.label",
+      "default": "Things you will need to light a log fire:"
+    },
+    {
+      "type": "richtext",
+      "id": "checklist",
+      "label": "t:sections.checklist.settings.checklist.label",
+      "default": "<p></p>"
+    }
+  ],
+  "presets": [{ "name": "t:sections.checklist.presets.name" }]
+}
+{% endschema %}

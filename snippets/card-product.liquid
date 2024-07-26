@@ -22,6 +22,7 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+{{ 'card-product.css' | asset_url | stylesheet_tag }}
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -199,10 +200,19 @@
               </p>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            <div class="price-review-container">
+              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+              <div class="hulk-reviews-widget" data-id="{{ 'products.product.review.id' | t }}"></div>
+            </div>
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if card_product.description != empty -%}
+              <div class="product-description">
+                {{ card_product.metafields.custom._short_description.value.children[0].children[0].value }}
               </div>
             {%- endif -%}
           </div>
@@ -322,6 +332,16 @@
           {%- endif -%}
         </div>
       </div>
+      {% if card_product.metafields.custom.sustainably_sourced.value == true %}
+        <div class="sustainable-badge">
+          {%- render 'sustainable-badge' -%}
+        </div>
+      {% endif %}
+      {% unless card_product.metafields.custom.value_proposition_label.value == blank %}
+        <div class="proposition-label">
+          <span>{{ card_product.metafields.custom.value_proposition_label.value }}</span>
+        </div>
+      {% endunless %}
     </div>
   </div>
 {%- else -%}
@@ -371,6 +391,9 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {% render 'price', show_compare_at_price: true %}
+            {%- if card_product.description != empty -%}
+              <div class="product-description">{{ card_product.description }}</div>
+            {%- endif -%}
           </div>
         </div>
       </div>

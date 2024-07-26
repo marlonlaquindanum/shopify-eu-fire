@@ -1,0 +1,89 @@
+.row {
+  display: block;
+  margin-top: 6rem;
+}
+
+.checklist-content--wrapper {
+  max-width: 48.3rem;
+  padding: 2.4rem;
+  border-radius: 4px;
+}
+
+.checklist-heading {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  margin-bottom: 1.6rem;
+}
+
+.checklist-content ul {
+  margin-top: 4rem;
+  list-style: none;
+}
+
+.checklist-content li {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.checklist-content li > a {
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.checklist-content li::after {
+  content: "";
+  background: url('./check.png') no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -.3rem;
+  left: -3rem;
+  width: 24px;
+  height: 24px;
+}
+
+.page-title {
+  display: none;
+}
+
+.col-sm, .col-md {
+  width: 100%;
+}
+
+#shopify-section-page .page-width {
+  margin: 6rem 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .checklist-content--wrapper {
+    padding: 4rem;
+  }
+
+  .checklist-heading {
+    font-size: 23px;
+    margin-bottom: 2.4rem;
+  }
+
+  .checklist-content {
+    margin-bottom: 1.4rem;
+  }
+
+  .col-sm {
+    width: 35%;
+  }
+
+  .col-md {
+    width: 60%;
+  }
+
+  #shopify-section-page .page-width {
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
+}
