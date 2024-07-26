@@ -340,7 +340,7 @@
       "type": "related-products",
       "settings": {
         "heading": "Latest Summer Deals",
-        "heading_size": "h2",
+        "heading_size": "h3",
         "products_to_show": 5,
         "columns_desktop": 5,
         "color_scheme": "scheme-2",
