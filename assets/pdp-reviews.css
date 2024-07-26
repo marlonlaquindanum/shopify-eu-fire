@@ -43,6 +43,14 @@
   width: unset;
   height: unset;
 }
+.stock-container .hulk-reviews-widget {
+  flex-grow: 1;
+  justify-content: end;
+}
+.stock-container .hulk-reviews-widget,
+.stock-container #hulkapps-reviews-anchor > div {
+  padding: 0;
+}
 
 @media (max-width: 989px) {
   .hulk-row .xs--hulk-12 {

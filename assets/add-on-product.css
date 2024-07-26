@@ -1,5 +1,6 @@
 .product__info-wrapper .stock-container {
   display: flex;
+  align-items: center;
 }
 .product__info-step .bundle-options {
   display: flex;

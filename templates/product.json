@@ -55,6 +55,13 @@
             "show_gift_card_recipient": false
           }
         },
+        "text_f8ChzW": {
+          "type": "text",
+          "settings": {
+            "text": "Select Click and Collect at <a href=\"#\" title=\"#\">basket</a> for savings",
+            "text_style": "body"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -81,14 +88,22 @@
           "type": "icon-with-text",
           "settings": {
             "layout": "vertical",
-            "icon_1": "heart",
-            "heading_1": "Click & Collect, Save 15% - collect from your local depot",
-            "icon_2": "return",
-            "heading_2": "Interest Free Payments - Select Paypal Pay Later at checkout",
-            "icon_3": "truck",
-            "heading_3": "Ready to Burn - Low smoke emissions",
-            "icon_4": "heart",
-            "heading_4": "Heading"
+            "icon_1": "click_collect",
+            "heading_1": "Click & Collect, Save 15%",
+            "text_1": "- collect from your local depot",
+            "link_1": "#",
+            "icon_2": "interest_free",
+            "heading_2": "Interest Free Payments",
+            "text_2": "- Select Paypal Pay Later at checkout",
+            "link_2": "",
+            "icon_3": "ready_burn",
+            "heading_3": "Ready to Burn",
+            "text_3": "- Low smoke emissions",
+            "link_3": "",
+            "icon_4": "temperature",
+            "heading_4": "Burn at a High Temperature",
+            "text_4": "- Long and natural flame",
+            "link_4": ""
           }
         }
       },
@@ -102,6 +117,7 @@
         "add_on_NPh7nq",
         "recharge_subscriptions_subscription_widget_brgUbr",
         "buy_buttons",
+        "text_f8ChzW",
         "description",
         "collapsible_tab_edaNG6",
         "collapsible_tab_TxTqLL",
