@@ -1,0 +1,11 @@
+<div class="flow-box-item">
+  {% if cover_image != blank %}
+    <a href="{% if video_url != blank %}{{ video_url }}{% else %}#{% endif %}" class="flow-box-item__video-link">
+      {{ cover_image | image_url: width: 256 | image_tag: class: 'flow-box-item__image' }}
+    </a>
+  {% endif %}
+  <div class="flow-box-item__text-wrapper">
+    {% render 'icon-instagram-white' %}
+    <h4>{{ video_title }}</h4>
+  </div>
+</div>

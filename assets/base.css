@@ -94,7 +94,6 @@ html.no-js .no-js-hidden {
 }
 
 .page-width {
-  max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -906,7 +905,8 @@ summary::-webkit-details-marker {
 
 .subtitle--small {
   font-size: 1.4rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0;
+  line-height: 21.6px;
 }
 
 .subtitle--medium {
@@ -1616,6 +1616,7 @@ details[open] > .share-button__fallback {
   box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset)
     var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
   z-index: -1;
+  display: none;
 }
 
 .field:after,
@@ -1635,6 +1636,7 @@ details[open] > .share-button__fallback {
   border-color: var(--color-input-border);
   transition: box-shadow var(--duration-short) ease;
   z-index: 1;
+  display: none;
 }
 
 .select__select {
@@ -1672,9 +1674,9 @@ details[open] > .share-button__fallback {
 .customer .field input:focus,
 .customer select:focus,
 .localization-form__select:focus.localization-form__select:after {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
   outline: 0;
   border-radius: var(--inputs-radius);
+  box-shadow: none;
 }
 
 .localization-form__select:focus {
@@ -1733,11 +1735,12 @@ details[open] > .share-button__fallback {
   padding: 1.5rem 1.6rem;
   margin: var(--inputs-border-width);
   transition: box-shadow var(--duration-short) ease;
+  border: 1px solid rgba(var(--color-foreground), 0.3);
 }
 
 .field__label,
 .customer .field label {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   left: 16px;
   top: 16px;
   margin-bottom: 0;
@@ -3211,7 +3214,7 @@ details-disclosure > details {
   .customer .field input:focus,
   .customer select:focus,
   .localization-form__select:focus.localization-form__select:after {
-    outline: transparent solid 1px;
+    outline: none;
   }
 
   .localization-form__select:focus {
@@ -3671,7 +3674,7 @@ details-disclosure > details {
 }
 .icon-with-text--two-column .icon,
 .icon-with-text--two-column img {
-  max-width: 1.7rem;
+  max-width: 2rem;
   height: auto;
   margin-right: 1rem;
 }
