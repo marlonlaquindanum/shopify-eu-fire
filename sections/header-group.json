@@ -9,7 +9,7 @@
           "type": "announcement",
           "settings": {
             "text": "Get 10% Off When You Refer a Friend",
-            "link": "shopify://collections"
+            "link": "shopify:\/\/collections"
           }
         },
         "announcement_wwYzgk": {
@@ -20,9 +20,12 @@
           }
         }
       },
-      "block_order": ["announcement_G8TtVi", "announcement_wwYzgk"],
+      "block_order": [
+        "announcement_G8TtVi",
+        "announcement_wwYzgk"
+      ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "auto_rotate": true,
         "change_slides_speed": 5
       }
@@ -44,23 +47,29 @@
             "menu_heading_link3": "",
             "menu3": "kiln-dried-firewood-3",
             "banner_position": "right",
-            "menu_image1": "shopify://shop_images/log-fire.png",
+            "menu_image1": "shopify:\/\/shop_images\/log-fire.png",
             "image_text1": "How to light a log fire?",
+            "image_desc1": "",
             "text_link1": "",
-            "menu_image2": "shopify://shop_images/firewood-advice.png",
+            "menu_image2": "shopify:\/\/shop_images\/firewood-advice.png",
             "image_text2": "Firewood Advice",
+            "image_desc2": "",
             "text_link2": ""
           }
         }
       },
-      "block_order": ["mega_menu_ejgYYf"],
+      "block_order": [
+        "mega_menu_ejgYYf"
+      ],
       "settings": {
         "menu": "main-menu",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "enable_transparent_header": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "menu_color_scheme": "scheme-1",
+        "search_color_scheme": "",
+        "mobile_menu_text": "",
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
@@ -68,5 +77,8 @@
       }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }
