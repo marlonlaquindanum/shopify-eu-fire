@@ -3617,6 +3617,9 @@ details-disclosure > details {
   --icon-size: calc(var(--font-heading-scale) * 3rem);
   --icon-spacing: calc(var(--font-heading-scale) * 1rem);
 }
+.icon-with-text h4 {
+  font-weight: var(--font-heading-weight);
+}
 .icon-with-text--horizontal {
   display: flex;
   justify-content: center;
@@ -3627,9 +3630,9 @@ details-disclosure > details {
   --icon-size: calc(var(--font-heading-scale) * 2rem);
 }
 .icon-with-text .icon {
-  fill: rgb(var(--color-foreground));
-  height: var(--icon-size);
-  width: var(--icon-size);
+  max-width: 1.7rem;
+  max-height: 1.7rem;
+  margin-right: 1rem;
 }
 .icon-with-text--horizontal .icon,
 .icon-with-text--horizontal img {
@@ -3685,12 +3688,12 @@ details-disclosure > details {
   margin-bottom: 1.2rem;
   width: calc(50% - 1.3rem);
 }
-.icon-with-text h2,
-.icon-with-text--two-column li span {
+.icon-with-text--two-column h4,
+.icon-with-text li span {
   font-size: 1.4rem;
   line-height: var(--font-body-scale);
 }
-.icon-with-text--two-column li span {
+.icon-with-text li span {
   margin: 0;
 }
 /* form checkmark */

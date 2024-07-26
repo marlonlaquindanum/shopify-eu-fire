@@ -19,27 +19,27 @@
   assign heading_6_empty = false
   assign text_only_all_items = true
 
-  if block.settings.heading_1 == empty
+  if block.settings.heading_1 == blank
     assign heading_1_empty = true
   endif
 
-  if block.settings.heading_2 == empty
+  if block.settings.heading_2 == blank
     assign heading_2_empty = true
   endif
 
-  if block.settings.heading_3 == empty
+  if block.settings.heading_3 == blank
     assign heading_3_empty = true
   endif
 
-  if block.settings.heading_4 == empty
+  if block.settings.heading_4 == blank
     assign heading_4_empty = true
   endif
 
-  if block.settings.heading_5 == empty
+  if block.settings.heading_5 == blank
     assign heading_5_empty = true
   endif
 
-  if block.settings.heading_6 == empty
+  if block.settings.heading_6 == blank
     assign heading_6_empty = true
   endif
 
@@ -62,7 +62,7 @@
   {{ block.shopify_attributes }}
 >
   {%- if block.settings.header -%}
-    <h2>{{ block.settings.header }}</h2>
+    <h4>{{ block.settings.header }}</h4>
   {%- endif -%}
   {%- unless heading_1_empty -%}
     <li class="icon-with-text__item">

@@ -1,3 +1,9 @@
+.contact .title {
+  margin: 0 0 0.8rem;
+}
+.contact .title + p {
+  margin: 0 0 1.6rem;
+}
 .contact img {
   max-width: 100%;
 }
@@ -36,4 +42,27 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
   }
+}
+.contact-page__wrapper:has(.contact-page__image) {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+@media screen and (max-width: 749px) {
+  .contact-page__wrapper:has(.contact-page__image) {
+    flex-direction: column;
+  }
+}
+.contact-page__image {
+  max-width: 66rem;
+}
+.contact-page__image img {
+  width: 100%;
+  height: auto;
+}
+.contact p.contact__subtitle {
+  margin-top: 0;
+}
+.contact .icon-with-text {
+  margin-top: 6rem;
 }
