@@ -94,6 +94,10 @@
     padding: 0 1.2rem;
   }
 }
+.mega_menu_block_img_block a {
+  text-decoration: none;
+  color: inherit;
+}
 .mega_menu_block_text * {
   font-size: 1.4rem;
   color: rgb(var(--color-foreground));
