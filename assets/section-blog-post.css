@@ -84,7 +84,13 @@
   margin-bottom: 1rem;
 }
 .article-template__title {
+  font-size: calc(var(--font-heading-scale) * 2.6rem);
   margin: 0;
+}
+@media screen and (min-width: 750px) {
+  .article-template__title {
+    font-size: calc(var(--font-heading-scale) * 3.5rem);
+  }
 }
 
 .article-template__title:not(:only-child) {
