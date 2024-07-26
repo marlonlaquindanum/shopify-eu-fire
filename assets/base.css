@@ -1735,6 +1735,7 @@ details[open] > .share-button__fallback {
   padding: 1.5rem 1.6rem;
   margin: var(--inputs-border-width);
   transition: box-shadow var(--duration-short) ease;
+  border: 1px solid rgba(var(--color-foreground), 0.3);
 }
 
 .field__label,
@@ -3673,7 +3674,7 @@ details-disclosure > details {
 }
 .icon-with-text--two-column .icon,
 .icon-with-text--two-column img {
-  max-width: 1.7rem;
+  max-width: 2rem;
   height: auto;
   margin-right: 1rem;
 }
