@@ -1,0 +1,15 @@
+{{ 'page.how-to.css' | asset_url | stylesheet_tag }}
+
+{% section 'image-with-text' %}
+<div class="row page-width">
+  <div class="col-sm">
+    {% section 'checklist' %}
+    {% section 'highlighted-products' %}
+  </div>
+  <div class="col-md">
+    {% section 'page' %}
+  </div>
+</div>
+{% section 'video' %}
+{% section 'email-signup-banner' %}
+{% section 'flow-box' %}

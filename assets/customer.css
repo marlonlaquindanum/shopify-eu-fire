@@ -327,7 +327,7 @@
   padding: 5rem 0;
 }
 .login > div:first-child {
-  border-bottom: 1px solid var(--color-grey);
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.3);
 }
 @media screen and (min-width: 990px) {
   .login {
@@ -340,7 +340,7 @@
     max-width: 70rem;
   }
   .login > div:first-child {
-    border-right: 1px solid var(--color-grey);
+    border-right: 1px solid rgba(var(--color-foreground), 0.3);
     border-bottom: 0;
   }
 }
@@ -785,11 +785,12 @@ div:has(+ .bitlogin-root) {
   border: 0;
   position: relative;
   text-align: center;
-  margin: 3rem 0;
+  margin: 2.6rem 0;
+  text-transform: lowercase;
 }
 div:has(+ .bitlogin-root)::before {
   content: '';
-  background: var(--color-grey);
+  background: rgba(var(--color-foreground), 0.3);
   position: absolute;
   left: 0;
   top: 50%;
@@ -798,7 +799,7 @@ div:has(+ .bitlogin-root)::before {
 }
 div:has(+ .bitlogin-root)::after {
   content: '';
-  background: var(--color-grey);
+  background: rgba(var(--color-foreground), 0.3);
   position: absolute;
   right: 0;
   top: 50%;
@@ -807,4 +808,23 @@ div:has(+ .bitlogin-root)::after {
 }
 button.scheme-match-outline p {
   font-weight: var(--font-body-weight);
+}
+.register h1 {
+  margin: 0;
+}
+.register p {
+  margin: 1.2rem 0 2.6rem;
+}
+.register button + div {
+  text-align: center;
+  width: 100%;
+}
+.register button + div a {
+  text-decoration: none;
+}
+@media only screen and (min-width: 750px) {
+  .register .customer-register__form-wrapper {
+    margin: 0 auto;
+    max-width: 44rem;
+  }
 }

@@ -46,3 +46,34 @@
 .video-section__media.media-fit-cover video {
   object-fit: cover;
 }
+
+.video-alt--text {
+  position: absolute;
+  width: 80%;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 31.2px;
+  color: var(--color-full-white);
+  bottom: 2.2rem;
+  left: 1.2rem;
+}
+
+.video-play-button > svg {
+  position: absolute;
+  bottom: 8.6rem;
+  left: 1.2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .video-alt--text {
+    font-size: 35px;
+    line-height: 42px;
+    bottom: 6rem;
+    left: 6rem;
+  }
+
+  .video-play-button > svg {
+    bottom: 9rem;
+    left: 6rem;
+  }
+}
