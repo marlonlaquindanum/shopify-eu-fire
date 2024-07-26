@@ -2414,7 +2414,10 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: block;
 }
 
-.shopify-section:has(> .header-wrapper.header--transparent) ~ #MainContent .section:has(.banner) {
+.shopify-section:has(> .header-wrapper.header--transparent) ~ #MainContent .section:has(.banner),
+.shopify-section:has(> .header-wrapper.header--transparent)
+  ~ #MainContent
+  .section:has(.article-template .article-template__hero-container) {
   margin-top: -8.5rem;
 }
 .shopify-section:has(> .header-wrapper.header--transparent) ~ #MainContent .section .banner {
