@@ -1,3 +1,9 @@
+.contact .title {
+  margin: 0 0 0.8rem;
+}
+.contact .title + p {
+  margin: 0 0 1.6rem;
+}
 .contact img {
   max-width: 100%;
 }
