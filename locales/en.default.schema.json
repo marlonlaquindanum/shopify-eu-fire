@@ -2582,7 +2582,40 @@
       }
     },
     "main-register": {
-      "name": "Registration"
+      "name": "Registration",
+      "settings": {
+        "checkbox_header": {
+          "content": "Signup checkboxes"
+        },
+        "accepts_marketing_checkbox": {
+          "label": "Show marketing checkbox?"
+        },
+        "accepts_sms_checkbox": {
+          "label": "Show SMS checkbox?"
+        },
+        "accepts_phone_checkbox": {
+          "label": "Show phone checkbox?"
+        },
+        "accepts_post_checkbox": {
+          "label": "Show post checkbox?"
+        },
+        "accepts_marketing": {
+          "label": "Marketing checkbox text",
+          "default": "I would like to receive Homefire newsletters for exclusive discounts and news and product launches."
+        },
+        "accepts_sms": {
+          "label": "SMS checkbox text",
+          "default": "I would like to receive SMS messages from Homefire"
+        },
+        "accepts_phone": {
+          "label": "Phone checkbox text",
+          "default": "I would like to receive phonecalls from Homefire"
+        },
+        "accepts_post": {
+          "label": "Post checkbox text",
+          "default": "I would like to receive post from Homefire"
+        }
+      }
     },
     "main-reset-password": {
       "name": "Password reset"
