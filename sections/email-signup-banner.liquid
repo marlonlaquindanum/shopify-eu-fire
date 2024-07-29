@@ -51,10 +51,25 @@
           alt="{{ section.settings.image.alt | escape }}"
           width="{{ section.settings.image.width }}"
           height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+          {%- if section.settings.mobile_image != blank -%}
+            class="small-hide medium-hide"
+          {% endif %}
         >
       {%- else -%}
         {%- render 'email-signup-banner-background' -%}
         {%- render 'email-signup-banner-background-mobile' -%}
+      {%- endif -%}
+      {%- if section.settings.mobile_image != blank -%}
+        <img
+          srcset="{{ section.settings.mobile_image | image_url }} {{ section.settings.mobile_image.width }}w"
+          sizes="100vw"
+          src="{{ section.settings.mobile_image | image_url: width: 990 }}"
+          loading="lazy"
+          alt="{{ section.settings.mobile_image.alt | escape }}"
+          width="{{ section.settings.mobile_image.width }}"
+          height="{{ section.settings.mobile_image.width | divided_by: section.settings.mobile_image.aspect_ratio }}"
+          class="large-up-hide"
+        >
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -63,6 +78,10 @@
       {% render 'fire-icon' %}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
+          {% when 'icon' %}
+            {% if block.settings.icon != blank %}
+              {{ block.settings.icon | image_url: width: block.settings.icon.width, height: block.settings.icon.height | image_tag: alt: 'logo', loading: 'lazy' }}
+            {% endif %}
           {%- when 'heading' -%}
             <h2 class="email-signup-banner__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
               {{ block.settings.heading | escape }}
@@ -151,6 +170,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.email-signup-banner.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.email-signup-banner.settings.mobile_image.label"
     },
     {
       "type": "range",
@@ -318,7 +342,7 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "h2",
+              "value": "h4",
               "label": "t:sections.all.heading_size.options__1.label"
             },
             {
@@ -368,12 +392,27 @@
       "type": "email_form",
       "name": "t:sections.email-signup-banner.blocks.email_form.name",
       "limit": 1
+    },
+    {
+      "type": "icon",
+      "name": "t:sections.email-signup-banner.blocks.icon.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "t:sections.email-signup-banner.blocks.icon.settings.icon.label"
+        }
+      ]
     }
   ],
   "presets": [
     {
       "name": "t:sections.email-signup-banner.presets.name",
       "blocks": [
+        {
+          "type": "icon"
+        },
         {
           "type": "heading"
         },

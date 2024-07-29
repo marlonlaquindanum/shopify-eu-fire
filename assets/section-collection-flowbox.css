@@ -1,0 +1,22 @@
+.shopify-section.collectionflowbox-section,
+.collectionflowbox-section .bzfy-feed-banner {
+  background-color: var(--color-white) !important;
+}
+.shopify-section.collectionflowbox-section {
+  margin-top: -1px;
+}
+.bzfy-c-carousel-control,
+.bzfy-t-feed-carousel div.bzfy-c-mobile-carousel-control {
+  display: none;
+}
+div.bzfy-c-carousel-slider-wrapper__inner {
+  padding: 0;
+}
+.collectionflowbox-section .bzfy-feed-banner {
+  padding: 0 !important;
+  text-align: left;
+}
+#banner-h1.bzfy-feed-banner__tagline {
+  margin: 0;
+  font-weight: 600;
+}

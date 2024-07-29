@@ -2343,6 +2343,18 @@
               },
               "options__44": {
                 "label": "Washing"
+              },
+              "options__45": {
+                "label": "Cursor click"
+              },
+              "options__46": {
+                "label": "Receipt check"
+              },
+              "options__47": {
+                "label": "Hurricane"
+              },
+              "options__48": {
+                "label": "Temperature"
               }
             }
           }
@@ -2442,6 +2454,12 @@
             "heading_1": {
               "label": "First heading"
             },
+            "text_1": {
+              "label": "First text"
+            },
+            "link_1": {
+              "label": "First link"
+            },
             "icon_2": {
               "label": "Second icon"
             },
@@ -2450,6 +2468,12 @@
             },
             "heading_2": {
               "label": "Second heading"
+            },
+            "text_2": {
+              "label": "Second text"
+            },
+            "link_2": {
+              "label": "Secondlinkt"
             },
             "icon_3": {
               "label": "Third icon"
@@ -2460,6 +2484,12 @@
             "heading_3": {
               "label": "Third heading"
             },
+            "text_3": {
+              "label": "Third text"
+            },
+            "link_3": {
+              "label": "Third link"
+            },
             "icon_4": {
               "label": "Fourth icon"
             },
@@ -2468,6 +2498,12 @@
             },
             "heading_4": {
               "label": "Fourth heading"
+            },
+            "text_4": {
+              "label": "Fourth text"
+            },
+            "link_4": {
+              "label": "Fourthlinkt"
             },
             "icon_5": {
               "label": "Fifth icon"
@@ -2478,6 +2514,12 @@
             "heading_5": {
               "label": "Fifth heading"
             },
+            "text_5": {
+              "label": "Fifth text"
+            },
+            "link_5": {
+              "label": "Fifth link"
+            },
             "icon_6": {
               "label": "Sixth icon"
             },
@@ -2486,6 +2528,20 @@
             },
             "heading_6": {
               "label": "Sixth heading"
+            },
+            "text_6": {
+              "label": "Sixth text"
+            },
+            "link_6": {
+              "label": "Sixth link"
+            }
+          }
+        },
+        "add_on": {
+          "name": "Add-on products",
+          "settings": {
+            "heading": {
+              "label": "Heading"
             }
           }
         }
@@ -2841,6 +2897,9 @@
         "image": {
           "label": "Background image"
         },
+        "mobile_image": {
+          "label": "Mobile image"
+        },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
         },
@@ -2932,6 +2991,14 @@
         }
       },
       "blocks": {
+        "icon": {
+          "name": "Icon",
+          "settings": {
+            "icon": {
+              "label": "Icon"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {
@@ -3570,6 +3637,21 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "step-guide": {
+      "name": "Step guide",
+      "blocks": {
+        "column": {
+          "settings": {
+            "step_number": {
+              "label": "Step number"
+            },
+            "show_arrow": {
+              "label": "Show arrow"
+            }
+          }
+        }
       }
     }
   }

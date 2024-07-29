@@ -1,0 +1,84 @@
+{% capture updateFlow %}
+    <div id ="js-flowbox-flow7919"
+         class="collection-flowbox-section "
+         data-key= 'Q1MZPqvXQsCnKasSJOxykw'
+         data-id= "#js-flowbox-flow7919"
+         data-locale= 'en-GB'
+         data-tags= "{{ section.settings.taghandle }}"
+         data-tagoperator = "{% if section.settings.Tagflow == "ALL"%}all{% endif %}"></div>
+
+    <style >
+        #js-flowbox-flow7919 {
+            margin-top: 30px;
+        }
+    </style>
+{% endcapture %}
+
+<!-- Product-- >
+{% if section.settings.featured_product != blank %}
+{%- assign current_variant = all_products[section.settings.featured_product] -%}
+{% if current_variant.id == product.id %}
+	{{ updateFlow }}
+{% endif %}
+{% endif %}
+
+<!--Collection-- >
+{% if section.settings.featured_collection != blank %}
+{% assign collections_title = collections[section.settings.featured_collection] %}
+{% if collections_title.handle == collection.handle %}
+	{{ updateFlow }}
+{% endif %}
+{% endif %}
+
+< !--No select anyone -->
+{% if section.settings.featured_product == blank and section.settings.featured_collection == blank %}
+    {{ updateFlow }}
+{% endif %}
+
+{% schema %}
+{
+  "name": "CommunityFlow-en-GB",
+  "class": "tag-flow collectionflowbox-section",
+  "settings": [
+
+    {
+      "type": "radio",
+      "id": "Tagflow",
+      "label": "Tag Operator",
+      "options": [
+        {
+          "value": "ALL",
+          "label": "ALL"
+        },
+        {
+          "value": "ANY",
+          "label": "ANY"
+        }
+      ],
+      "default": "ALL"
+    },
+    {
+      "type": "text",
+      "id": "taghandle",
+      "label": "Tags(Separated by commas)",
+      "info":"for example: 'food', 'sun'"
+    },
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Show on Single product"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Show on single collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CommunityFlow-en-GB",
+      "category": "Flowbox Flows"
+    }
+  ]
+}
+{% endschema %}

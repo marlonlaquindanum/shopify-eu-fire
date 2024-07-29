@@ -35,28 +35,48 @@
       -%}
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-            {{ option.name }}:
-            <span data-selected-swatch-value="{{ option.name }}">
-              {{- option.selected_value -}}
-            </span>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
+          <div class="product__info-step">
+            <div class="header-container">
+                <div class="count">{{ count }}</div>
+                {% assign count = count | plus: 1 %}
+                <div class="heading">
+                    <legend class="form__label">
+                        {{ option.name }}:
+                        <span data-selected-swatch-value="{{ option.name }}">
+                            {{- option.selected_value -}}
+                        </span>
+                    </legend>
+                </div>
+            </div>
+            <div class="content-container">
+                {% render 'product-variant-options',
+                    product: product,
+                    option: option,
+                    block: block,
+                    picker_type: picker_type
+                %}
+            </div>
+          </div>
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
+          <div class="product__info-step">
+            <div class="header-container">
+                <div class="count">{{ count }}</div>
+                {% assign count = count | plus: 1 %}
+                <div class="heading">
+                    <legend class="form__label">{{ option.name }}</legend>
+                </div>
+            </div>
+            <div class="content-container">
+                {% render 'product-variant-options',
+                    product: product,
+                    option: option,
+                    block: block,
+                    picker_type: picker_type
+                %}
+            </div>
+          </div>
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
