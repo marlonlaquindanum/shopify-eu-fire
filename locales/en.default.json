@@ -494,10 +494,6 @@
       "confirm_password_error": "Password fields do not match",
       "submit": "Create",
       "phone": "Telephone",
-      "accepts_marketing": "I would like to receive Homefire newsletters for exclusive discounts and news and product launches.",
-      "accepts_sms": "I would like to receive SMS messages from Homefire",
-      "accepts_phone": "I would like to receive phonecalls from Homefire",
-      "accepts_post": "I would like to receive post from Homefire",
       "log_in_html": "Already have an account? <a href=\"{{ link }}\">Log in</a>"
     },
     "reset_password": {

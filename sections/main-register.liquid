@@ -180,30 +180,38 @@
         </svg>
         {{ 'customer.register.confirm_password_error' | t }}
       </span>
-      <label class="checkbox__container">
-        <input type="hidden" name="customer[accepts_marketing]" value="false" />
-        <input type="checkbox" name="customer[accepts_marketing]" id="accepts-marketing" />
-        <span class="checkbox__checkmark"></span>
-        {{ 'customer.register.accepts_marketing' | t }}
-      </label>
-      <label class="checkbox__container">
-        <input type="hidden" name="customer[accepts_sms]" value="false" />
-        <input type="checkbox" name="customer[accepts_sms]" id="accepts-sms" />
-        <span class="checkbox__checkmark"></span>
-        {{ 'customer.register.accepts_sms' | t }}
-      </label>
-      <label class="checkbox__container">
-        <input type="hidden" name="customer[accepts_phone]" value="false" />
-        <input type="checkbox" name="customer[accepts_phone]" id="accepts-phone" />
-        <span class="checkbox__checkmark"></span>
-        {{ 'customer.register.accepts_phone' | t }}
-      </label>
-      <label class="checkbox__container">
-        <input type="hidden" name="customer[accepts_post]" value="false" />
-        <input type="checkbox" name="customer[accepts_post]" id="accepts-post" />
-        <span class="checkbox__checkmark"></span>
-        {{ 'customer.register.accepts_post' | t }}
-      </label>
+      {%- if section.settings.accepts_marketing_checkbox -%}
+        <label class="checkbox__container">
+          <input type="hidden" name="customer[accepts_marketing]" value="false" />
+          <input type="checkbox" name="customer[accepts_marketing]" id="accepts-marketing" />
+          <span class="checkbox__checkmark"></span>
+          {{ section.settings.accepts_marketing }}
+        </label>
+      {%- endif -%}
+      {%- if section.settings.accepts_sms_checkbox -%}
+        <label class="checkbox__container">
+          <input type="hidden" name="customer[accepts_sms]" value="false" />
+          <input type="checkbox" name="customer[accepts_sms]" id="accepts-sms" />
+          <span class="checkbox__checkmark"></span>
+          {{ section.settings.accepts_sms }}
+        </label>
+      {%- endif -%}
+      {%- if section.settings.accepts_phone_checkbox -%}
+        <label class="checkbox__container">
+          <input type="hidden" name="customer[accepts_phone]" value="false" />
+          <input type="checkbox" name="customer[accepts_phone]" id="accepts-phone" />
+          <span class="checkbox__checkmark"></span>
+          {{ section.settings.accepts_phone_checkbox }}
+        </label>
+      {%- endif -%}
+      {%- if section.settings.accepts_post_checkbox -%}
+        <label class="checkbox__container">
+          <input type="hidden" name="customer[accepts_post]" value="false" />
+          <input type="checkbox" name="customer[accepts_post]" id="accepts-post" />
+          <span class="checkbox__checkmark"></span>
+          {{ section.settings.accepts_post }}
+        </label>
+      {%- endif -%}
       <button>
         {{ 'customer.register.submit' | t }}
       </button>
@@ -225,6 +233,54 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-register.settings.checkbox_header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "accepts_marketing_checkbox",
+      "label": "t:sections.main-register.settings.accepts_marketing_checkbox.label"
+    },
+    {
+      "type": "text",
+      "id": "accepts_marketing",
+      "label": "t:sections.main-register.settings.accepts_marketing.label",
+      "default": "t:sections.main-register.settings.accepts_marketing.default"
+    },
+    {
+      "type": "checkbox",
+      "id": "accepts_sms_checkbox",
+      "label": "t:sections.main-register.settings.accepts_sms_checkbox.label"
+    },
+    {
+      "type": "text",
+      "id": "accepts_sms",
+      "label": "t:sections.main-register.settings.accepts_sms.label",
+      "default": "t:sections.main-register.settings.accepts_sms.default"
+    },
+    {
+      "type": "checkbox",
+      "id": "accepts_phone_checkbox",
+      "label": "t:sections.main-register.settings.accepts_phone_checkbox.label"
+    },
+    {
+      "type": "text",
+      "id": "accepts_phone",
+      "label": "t:sections.main-register.settings.accepts_phone.label",
+      "default": "t:sections.main-register.settings.accepts_phone.default"
+    },
+    {
+      "type": "checkbox",
+      "id": "accepts_post_checkbox",
+      "label": "t:sections.main-register.settings.accepts_post_checkbox.label"
+    },
+    {
+      "type": "text",
+      "id": "accepts_post",
+      "label": "t:sections.main-register.settings.accepts_post.label",
+      "default": "t:sections.main-register.settings.accepts_post.default"
     },
     {
       "type": "range",
