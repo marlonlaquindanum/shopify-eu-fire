@@ -4,36 +4,19 @@
   padding: 0 1rem;
 }
 #hulk__product-review .reviwe__Slider-view .review__showSlide,
-.hulk-reviews-widget .reviwe__Slider-view .review__showSlide {
+.hulk-reviews-widget .reviwe__Slider-view .review__showSlide,
+#hulk__product-review .hulk-pr__grid-view .hulk-pr__grid-items .grid-review-details,
+.hulk-reviews-widget .hulk-pr__grid-view .hulk-pr__grid-items .grid-review-details {
   background-color: var(--gradient-background);
 }
-#hulk-review > p {
+#hulk-review > p,
+.hulk-reviews-widget > p {
   display: none;
 }
-#hulk__product-review .h1,
-#hulk__product-review .h2,
-#hulk__product-review .h3,
-#hulk__product-review .h4,
-#hulk__product-review .h5,
-#hulk__product-review .h6,
-#hulk__product-review h1,
-#hulk__product-review h2,
-#hulk__product-review h3,
-#hulk__product-review h4,
-#hulk__product-review h5,
-#hulk__product-review h6,
-.hulk-reviews-widget .h1,
-.hulk-reviews-widget .h2,
-.hulk-reviews-widget .h3,
-.hulk-reviews-widget .h4,
-.hulk-reviews-widget .h5,
-.hulk-reviews-widget .h6,
-.hulk-reviews-widget h1,
-.hulk-reviews-widget h2,
-.hulk-reviews-widget h3,
-.hulk-reviews-widget h4,
-.hulk-reviews-widget h5,
-.hulk-reviews-widget h6 {
+.hulk-reviews-widget .read-more-review {
+  color: var(--color-foreground);
+}
+:is(#hulk__product-review, .hulk-reviews-widget) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
   font-family: var(--font-heading-family);
 }
 #hulk__product-review .hulk-pr__grid-items__carousel .ec__nav,
