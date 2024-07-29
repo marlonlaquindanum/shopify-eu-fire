@@ -1,11 +1,17 @@
 {% capture updateFlow %}
     <div style = "display:block !important;" id ="js-flowbox-flow1259"
-         class="collection-flowbox-section page-width"
+         class="collection-flowbox-section page-width color-scheme-2"
          data-key= 'YOUP4_G6S-mGwYv01QHJRA'
          data-id= "#js-flowbox-flow1259"
          data-locale= 'en-GB'
          data-tags= "{{ collection.handle | replace: "-", " "}}"
          data-tagoperator = "{% if section.settings.Tagflow == "ALL"%}all{% endif %}"></div>
+
+  <style >
+    #js-flowbox-flow1259 {
+      padding-top: 30px;
+    }
+  </style>
 {% endcapture %}
 
 <!--Product-- >
@@ -77,7 +83,3 @@
   ]
 }
 {% endschema %}
-{% stylesheet %}
-{% endstylesheet %}
-{% javascript %}
-{% endjavascript %}

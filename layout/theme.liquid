@@ -1,15 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-    <script>
-      (function(d, id) {
-        if (!window.flowbox) { var f = function() { f.q.push(arguments); }; f.q = []; window.flowbox = f; }
-        if (d.getElementById(id)) { return; }
-        var s = d.createElement('script'), fjs = d.scripts[d.scripts.length - 1]; s.id = id; s.async = true;
-        s.src = ' https://connect.getflowbox.com/flowbox.js';
-        fjs.parentNode.insertBefore(s, fjs);
-      })(document, 'flowbox-js-embed');
-    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -37,13 +28,14 @@
 
     {% render 'meta-tags' %}
 
+    <script src="{{ 'jquery.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'flowbox-head.js' | asset_url }}" defer></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
 
     {{ content_for_header }}
 

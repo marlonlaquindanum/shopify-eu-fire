@@ -2,21 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const fullDescription = document.querySelector('.fulldes');
   const shortDescription = document.querySelector('.shortdes');
 
-  if (document.querySelector('.readmore')) {
-    document.querySelector('.readmore').addEventListener('click', () => {
+  document.querySelectorAll('.readless,.readmore').forEach((button) => {
+    button.addEventListener('click', (event) => {
       if (fullDescription && shortDescription) {
-        fullDescription.style.display = 'block';
-        shortDescription.style.display = 'none';
+        fullDescription.style.display = event.target.classList.contains('readless') ? 'none' : 'block';
+        shortDescription.style.display = event.target.classList.contains('readmore') ? 'none' : 'block';
       }
     });
-  }
-
-  if (document.querySelector('.readless')) {
-    document.querySelector('.readless').addEventListener('click', () => {
-      if (fullDescription && shortDescription) {
-        fullDescription.style.display = 'none';
-        shortDescription.style.display = 'block';
-      }
-    });
-  }
+  });
 });
