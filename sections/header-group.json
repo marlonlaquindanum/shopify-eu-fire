@@ -25,23 +25,51 @@
         "announcement_wwYzgk"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "auto_rotate": true,
         "change_slides_speed": 5
       }
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_ejgYYf": {
+          "type": "mega-menu",
+          "settings": {
+            "mainemenu": "Kiln Dried Firewood",
+            "menu_heading1": "Shop All Kiln Dried Firewood",
+            "menu_heading_link1": "",
+            "menu1": "kiln-dried-firewood-1",
+            "menu_heading2": "Shop Smaller Bags",
+            "menu_heading_link2": "",
+            "menu2": "kiln-dried-firewood-2",
+            "menu_heading3": "Shop All Bulk Bags",
+            "menu_heading_link3": "",
+            "menu3": "kiln-dried-firewood-3",
+            "banner_position": "right",
+            "menu_image1": "shopify:\/\/shop_images\/log-fire.png",
+            "image_text1": "How to light a log fire?",
+            "image_desc1": "",
+            "text_link1": "",
+            "menu_image2": "shopify:\/\/shop_images\/firewood-advice.png",
+            "image_text2": "Firewood Advice",
+            "image_desc2": "",
+            "text_link2": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_ejgYYf"
+      ],
       "settings": {
-        "logo_position": "middle-left",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
-        "color_scheme": "scheme-1",
+        "enable_transparent_header": true,
+        "color_scheme": "scheme-2",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "search_color_scheme": "",
+        "mobile_menu_text": "",
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,

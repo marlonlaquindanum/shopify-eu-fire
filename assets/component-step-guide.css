@@ -1,0 +1,60 @@
+.step-guide .title {
+  font-weight: 600;
+}
+.step-list {
+  display: flex;
+}
+.step-card a,
+.step-card a:hover {
+  color: rgb(var(--color-foreground));
+}
+.step-card .step-icon {
+  position: absolute;
+}
+
+@media (min-width: 990px) {
+  .step-list {
+    gap: 4rem;
+  }
+  .step-list__item {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+  .step-icon.step-1 {
+    top: 24px;
+    right: -27px;
+  }
+  .step-icon.step-2 {
+    right: -25px;
+  }
+  .step-icon.step-3 {
+    top: 30px;
+    right: -28px;
+  }
+  .step-icon.step-4 {
+    right: -28px;
+  }
+}
+
+@media (max-width: 989px) {
+  .step-list {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  .step-icon.step-1 {
+    right: 46%;
+    margin-top: 15px;
+  }
+  .step-icon.step-2 {
+    right: 63%;
+    margin-top: 7px;
+  }
+  .step-icon.step-3 {
+    right: 55%;
+    margin-top: 14px;
+  }
+  .step-icon.step-4 {
+    right: 0;
+    margin-top: 5px;
+  }
+}

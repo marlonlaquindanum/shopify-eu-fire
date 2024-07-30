@@ -80,7 +80,16 @@ details[open].menu-opening > .menu-drawer__submenu {
     height: auto;
   }
 }
-
+.menu-drawer__close-icon {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 7;
+}
+.menu-drawer__close-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
 .menu-drawer__inner-container {
   position: relative;
   height: 100%;
@@ -215,6 +224,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   z-index: 6;
   background-color: rgb(var(--color-background));
 }
+p.menu-drawer__message:empty {
+  display: block;
+}
 .menu-drawer__close-button {
   text-decoration: none;
   display: flex;
@@ -311,6 +323,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   position: fixed;
   top: 0;
   right: 0;
+  opacity: 0;
 }
 .menu-drawer-container.menu-opening .header__icon--summary:before {
   content: unset;

@@ -1,23 +1,61 @@
 <style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
+  #MainContent:has( .template-404) {
+    background: var(--color-white);
   }
-
+  #MainContent:has( .template-404) .shopify-section {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .template-404,
+  .template-404 .title{
+    color: var(--color-black);
+  }
+  .template-404 .title {
+    margin: 1.6rem 0;
+  }
+  .template-404 .button {
+    margin: 0;
+  }
+  @media screen and (max-width: 749px) {
+    .template-404 {
+      margin: 23rem auto
+    }
+  }
   @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
+    .template-404 .title {
+      margin: 2.4rem 0;
     }
   }
 </style>
 
 <div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
+  {% render 'icon-404' %}
+  <h1 class="title h3">
     {{ 'templates.404.title' | t }}
   </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
+  <a href="{{ section.settings.btn_link }}" class="button button--secondary">
+    {{ section.settings.btn_text }}
   </a>
 </div>
+
+{% schema %}
+{
+  "name": "t:sections.main-404.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "t:sections.main-404.settings.btn_text.label",
+      "default": "t:sections.main-404.settings.btn_text.default"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "t:sections.main-404.settings.btn_link.label"
+    }
+  ]
+}
+{% endschema %}

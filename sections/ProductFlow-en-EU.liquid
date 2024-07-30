@@ -1,0 +1,67 @@
+<!-- Welcome section starts -->
+{% if section.settings.featured_product != blank %}
+    {%- assign current_variant = all_products[section.settings.featured_product] -%}
+    {% if current_variant.id == product.id %}
+        <section class="welcome">
+            <div class="container">
+                <div class="welcome-outter">
+                    {% assign variant = current_variant.selected_or_first_available_variant %}
+                    <div id="js-flowbox-flow7489" class="product-flowbox-sections" data-key= 'iXSAq5rMQ8aq4k7xb70f0g' data-id= "#js-flowbox-flow7489" data-locale= 'en-EU' data-product= "{{ variant.sku}}"></div>
+
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endif %}
+
+{% if section.settings.featured_collection != blank %}
+    {% assign collections_title = collections[section.settings.featured_collection] %}
+    {% if collections_title.handle == collection.handle %}
+        <section class="welcome">
+            <div class="container">
+                <div class="welcome-outter">
+                    <div id ="js-flowbox-flow7489" class="productCollection-flowbox-section" data-key= 'iXSAq5rMQ8aq4k7xb70f0g' data-id= "#js-flowbox-flow7489" data-locale= 'en-EU' data-tags="{{ collection.handle }}"></div>
+
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endif %}
+
+{% if section.settings.featured_product == blank and section.settings.featured_collection == blank %}
+    {% if template contains 'product' %}
+        <section class="welcome">
+            <div class="container">
+                <div class="welcome-outter">
+                    {% assign current_variant = product.selected_or_first_available_variant %}
+                    <div id ="js-flowbox-flow7489" class="product-flowbox-sections" data-key= 'iXSAq5rMQ8aq4k7xb70f0g' data-id= "#js-flowbox-flow7489" data-locale= 'en-EU' data-product= "{{ current_variant.sku }}"></div>
+                </div>
+            </div >
+        </section>
+    {% endif %}
+{% endif %}
+<!-- Welcome section ends -->
+{% schema %}
+{
+  "name": "ProductFlow-en-EU",
+  "class": "productFlowbox-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Show on Single product"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Show on single collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ProductFlow-en-EU",
+      "category": "ADVANCED LAYOUT"
+    }
+  ]
+}
+{% endschema %}

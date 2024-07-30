@@ -1,10 +1,11 @@
 .search__input.field__input {
-  padding-left: 5rem;
+  padding-left: 3rem;
 }
 
 .search__button {
   left: var(--inputs-border-width);
-  top: 1rem;
+  top: 0.5rem;
+  justify-content: left;
 }
 
 .reset__button {
@@ -79,6 +80,7 @@ input::-webkit-search-decoration {
   display: none;
 }
 .template-search__search .field input {
+  border: 0;
   border-bottom: 1px solid var(--color-grey);
   border-radius: unset;
   box-shadow: unset;

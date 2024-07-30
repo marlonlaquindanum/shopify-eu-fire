@@ -14,18 +14,33 @@
   assign heading_1_empty = false
   assign heading_2_empty = false
   assign heading_3_empty = false
+  assign heading_4_empty = false
+  assign heading_5_empty = false
+  assign heading_6_empty = false
   assign text_only_all_items = true
 
-  if block.settings.heading_1 == empty
+  if block.settings.heading_1 == empty or block.settings.heading_1 == blank
     assign heading_1_empty = true
   endif
 
-  if block.settings.heading_2 == empty
+  if block.settings.heading_2 == empty or block.settings.heading_2 == blank
     assign heading_2_empty = true
   endif
 
-  if block.settings.heading_3 == empty
+  if block.settings.heading_3 == empty or block.settings.heading_3 == blank
     assign heading_3_empty = true
+  endif
+
+  if block.settings.heading_4 == empty or block.settings.heading_4 == blank
+    assign heading_4_empty = true
+  endif
+
+  if block.settings.heading_5 == empty or block.settings.heading_5 == blank
+    assign heading_5_empty = true
+  endif
+
+  if block.settings.heading_6 == empty or block.settings.heading_6 == blank
+    assign heading_6_empty = true
   endif
 
   if heading_1_empty == false and block.settings.icon_1 != 'none' or block.settings.image_1 != null
@@ -34,76 +49,57 @@
     assign text_only_all_items = false
   elsif heading_3_empty == false and block.settings.icon_3 != 'none' or block.settings.image_3 != null
     assign text_only_all_items = false
+  elsif heading_4_empty == false and block.settings.icon_4 != 'none' or block.settings.image_4 != null
+    assign text_only_all_items = false
+  elsif heading_5_empty == false and block.settings.icon_5 != 'none' or block.settings.image_5 != null
+    assign text_only_all_items = false
+  elsif heading_6_empty == false and block.settings.icon_6 != 'none' or block.settings.image_6 != null
+    assign text_only_all_items = false
   endif
 -%}
 <ul
   class="icon-with-text icon-with-text--{{ block.settings.layout }} list-unstyled{% if text_only_all_items %} icon-with-text--text-only{% endif %}"
   {{ block.shopify_attributes }}
 >
-  {%- unless heading_1_empty -%}
-    <li class="icon-with-text__item">
-      {%- if block.settings.image_1 == null -%}
-        {%- render 'icon-accordion', icon: block.settings.icon_1 -%}
-      {%- else -%}
-        <img
-          src="{{ block.settings.image_1 | image_url }}"
-          {% if block.settings.image_1.alt != blank %}
-            alt="{{ block.settings.image_1.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
-          height="auto"
-          width="auto"
-          loading="lazy"
-        >
-      {%- endif -%}
-      <span class="h4 inline-richtext">
-        {{- block.settings.heading_1 -}}
-      </span>
-    </li>
-  {%- endunless -%}
-  {%- unless heading_2_empty -%}
-    <li class="icon-with-text__item">
-      {%- if block.settings.image_2 == null -%}
-        {% render 'icon-accordion', icon: block.settings.icon_2 -%}
-      {%- else -%}
-        <img
-          src="{{ block.settings.image_2 | image_url }}"
-          {% if block.settings.image_2.alt != blank %}
-            alt="{{ block.settings.image_2.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
-          height="auto"
-          width="auto"
-          loading="lazy"
-        >
-      {%- endif -%}
-      <span class="h4 inline-richtext">
-        {{- block.settings.heading_2 -}}
-      </span>
-    </li>
-  {%- endunless -%}
-  {%- unless heading_3_empty -%}
-    <li class="icon-with-text__item">
-      {%- if block.settings.image_3 == null -%}
-        {% render 'icon-accordion', icon: block.settings.icon_3 -%}
-      {%- else -%}
-        <img
-          src="{{ block.settings.image_3 | image_url }}"
-          {% if block.settings.image_3.alt != blank %}
-            alt="{{ block.settings.image_3.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
-          height="auto"
-          width="auto"
-          loading="lazy"
-        >
-      {%- endif -%}
-      <span class="h4 inline-richtext">
-        {{- block.settings.heading_3 -}}
-      </span>
-    </li>
-  {%- endunless -%}
+  {%- if block.settings.header -%}
+    <h4>{{ block.settings.header }}</h4>
+  {%- endif -%}
+  {%- for i in (1..6) -%}
+    {% assign heading = 'heading_' | append: i %}
+    {% assign image = 'image_' | append: i %}
+    {% assign icon = 'icon_' | append: i %}
+    {% assign text = 'text_' | append: i %}
+    {% assign link = 'link_' | append: i %}
+    {% if block.settings[heading] != blank %}
+      {% if block.settings[link] %}
+        <a class="link" href="#">
+      {% endif %}
+        <li class="icon-with-text__item">
+          {%- if block.settings[image] == null -%}
+            {%- render 'icon-accordion', icon: block.settings[icon] -%}
+          {%- else -%}
+            <img
+              src="{{ block.settings[image] | image_url }}"
+              {% if block.settings[image].alt != blank %}
+                alt="{{ block.settings[image].alt | escape }}"
+              {% else %}
+                role="presentation"
+              {% endif %}
+              height="auto"
+              width="auto"
+              loading="lazy"
+            >
+          {%- endif -%}
+          <span class="inline-richtext">
+            {{- block.settings[heading] -}}
+            {% if block.settings[text] %}
+              <span class="text no-margin">{{ block.settings[text] }}</span>
+            {% endif %}
+          </span>
+        </li>
+      {% if block.settings[link] %}
+        </a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 </ul>

@@ -1,0 +1,85 @@
+{% capture updateFlow %}
+    <div style = "display:block !important;" id ="js-flowbox-flow1259"
+         class="collection-flowbox-section page-width color-scheme-2"
+         data-key= 'YOUP4_G6S-mGwYv01QHJRA'
+         data-id= "#js-flowbox-flow1259"
+         data-locale= 'en-GB'
+         data-tags= "{{ collection.handle | replace: "-", " "}}"
+         data-tagoperator = "{% if section.settings.Tagflow == "ALL"%}all{% endif %}"></div>
+
+  <style >
+    #js-flowbox-flow1259 {
+      padding-top: 30px;
+    }
+  </style>
+{% endcapture %}
+
+<!--Product-- >
+  {% if section.settings.featured_product != blank %}
+  {%- assign current_variant = all_products[section.settings.featured_product] -%}
+  {% if current_variant.id == product.id %}
+  	{{ updateFlow }}
+  {% endif %}
+  {% endif %}
+
+  < !-- Collection-- >
+  {% if section.settings.featured_collection != blank %}
+  {% assign collections_title = collections[section.settings.featured_collection] %}
+  {% if collections_title.handle == collection.handle %}
+  	{{ updateFlow }}
+  {% endif %}
+  {% endif %}
+
+  < !--No select anyone
+-->
+{% if section.settings.featured_product == blank and section.settings.featured_collection == blank %}
+    {{ updateFlow }}
+{% endif %}
+
+{% schema %}
+{
+  "name": "CategoryFlow-en-GB",
+  "class": "tag-flow collectionflowbox-section",
+  "settings": [
+
+    {
+      "type": "radio",
+      "id": "Tagflow",
+      "label": "Tag Operator",
+      "options": [
+        {
+          "value": "ALL",
+          "label": "ALL"
+        },
+        {
+          "value": "ANY",
+          "label": "ANY"
+        }
+      ],
+      "default": "ALL"
+    },
+    {
+      "type": "text",
+      "id": "taghandle",
+      "label": "Tags(Separated by commas)",
+      "info":"for example: 'food', 'sun'"
+    },
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Show on Single product"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Show on single collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CategoryFlow-en-GB",
+      "category": "Flowbox Flows"
+    }
+  ]
+}
+{% endschema %}

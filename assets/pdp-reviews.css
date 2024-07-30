@@ -1,0 +1,62 @@
+#hulk__product-review .product-review__wrapper,
+.hulk-reviews-widget .product-review__wrapper {
+  max-width: var(--page-width);
+  padding: 0 1rem;
+}
+#hulk__product-review .reviwe__Slider-view .review__showSlide,
+.hulk-reviews-widget .reviwe__Slider-view .review__showSlide,
+#hulk__product-review .hulk-pr__grid-view .hulk-pr__grid-items .grid-review-details,
+.hulk-reviews-widget .hulk-pr__grid-view .hulk-pr__grid-items .grid-review-details {
+  background-color: var(--gradient-background);
+}
+#hulk-review > p,
+.hulk-reviews-widget > p {
+  display: none;
+}
+.hulk-reviews-widget .read-more-review {
+  color: var(--color-foreground);
+}
+:is(#hulk__product-review, .hulk-reviews-widget) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+  font-family: var(--font-heading-family);
+}
+#hulk__product-review .hulk-pr__grid-items__carousel .ec__nav,
+#hulk__product-review .reviwe__Slider-view .ec__nav,
+.hulk-reviews-widget .hulk-pr__grid-items__carousel .ec__nav,
+.hulk-reviews-widget .reviwe__Slider-view .ec__nav {
+  width: unset;
+  height: unset;
+}
+.stock-container .hulk-reviews-widget {
+  flex-grow: 1;
+  justify-content: end;
+}
+.stock-container .hulk-reviews-widget,
+.stock-container #hulkapps-reviews-anchor > div {
+  padding: 0;
+}
+
+@media (max-width: 989px) {
+  .hulk-row .xs--hulk-12 {
+    flex: unset;
+    max-width: 50%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: unset;
+  }
+  #hulk__product-review .hulk-pr__grid-items__carousel .ec__nav.ec__nav--prev,
+  #hulk__product-review .reviwe__Slider-view .ec__nav.ec__nav--prev,
+  .hulk-reviews-widget .hulk-pr__grid-items__carousel .ec__nav.ec__nav--prev,
+  .hulk-reviews-widget .reviwe__Slider-view .ec__nav.ec__nav--prev {
+    left: -5px;
+  }
+  #hulk__product-review .hulk-pr__grid-items__carousel .ec__nav.ec__nav--next,
+  #hulk__product-review .reviwe__Slider-view .ec__nav.ec__nav--next,
+  .hulk-reviews-widget .hulk-pr__grid-items__carousel .ec__nav.ec__nav--next,
+  .hulk-reviews-widget .reviwe__Slider-view .ec__nav.ec__nav--next {
+    right: -5px;
+  }
+  #hulk__product-review .reviwe__Slider-view .review__showSlide,
+  .hulk-reviews-widget .reviwe__Slider-view .review__showSlide {
+    padding: 10px 25px;
+  }
+}

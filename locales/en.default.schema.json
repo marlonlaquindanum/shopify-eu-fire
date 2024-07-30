@@ -997,6 +997,9 @@
             }
           }
         },
+        "socials": {
+          "name": "Socials/Accreditations"
+        },
         "text": {
           "name": "Text",
           "settings": {
@@ -1010,6 +1013,12 @@
         }
       },
       "settings": {
+        "logo_width": {
+          "label": "Logo Width"
+        },
+        "logo_width_mobile": {
+          "label": "Logo Width (Mobile)"
+        },
         "newsletter_enable": {
           "label": "Show email signup"
         },
@@ -1017,21 +1026,45 @@
           "label": "Heading"
         },
         "header__1": {
-          "content": "Email Signup",
-          "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
+          "content": "Footer Info"
         },
         "header__2": {
+          "content": "Footer Menu"
+        },
+        "header__3": {
           "content": "Social media icons",
           "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
+        },
+        "header__4": {
+          "content": "Accreditations"
+        },
+        "footer_info": {
+          "label": "Footer info",
+          "info": "Small paragraph that sits below the logo on the footer"
+        },
+        "footer_tel": {
+          "label": "Footer telephone number"
+        },
+        "footer_tel_link": {
+          "label": "Footer telephone Link"
+        },
+        "footer_tel_img": {
+          "label": "Footer telephone Image"
         },
         "show_social": {
           "label": "Show social media icons"
         },
-        "header__3": {
-          "content": "Country/region selector"
+        "show_accreditations": {
+          "label": "Show accreditations"
         },
-        "header__4": {
-          "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
+        "image_1": {
+          "label": "Image 1"
+        },
+        "image_2": {
+          "label": "Image 2"
+        },
+        "image_3": {
+          "label": "Image 3"
         },
         "enable_country_selector": {
           "label": "Enable country/region selector"
@@ -1637,38 +1670,63 @@
     },
     "main-article": {
       "name": "Blog post",
+      "settings": {
+        "overlay_opacity": {
+          "label": "Overlay opacity"
+        },
+        "featured_image_mobile": {
+          "label": "Featured image (mobile)",
+          "info": "Replaces the header image on mobile, will crop the desktop image if left blank."
+        },
+        "image_height": {
+          "label": "Featured image height",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
+            "label": "Large"
+          },
+          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+        },
+        "content_size": {
+          "label": "Desktop media width",
+          "info": "Media is automatically optimized for mobile.",
+          "options__1": {
+            "label": "X-Small"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
+            "label": "Large"
+          }
+        },
+        "blog_show_date": {
+          "label": "Show date"
+        },
+        "blog_show_author": {
+          "label": "Show author"
+        },
+        "blog_show_tags": {
+          "label": "Show Tags"
+        }
+      },
       "blocks": {
         "featured_image": {
-          "name": "Featured image",
-          "settings": {
-            "image_height": {
-              "label": "Featured image height",
-              "options__1": {
-                "label": "Adapt to image"
-              },
-              "options__2": {
-                "label": "Small"
-              },
-              "options__3": {
-                "label": "Medium"
-              },
-              "options__4": {
-                "label": "Large"
-              },
-              "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
-            }
-          }
+          "name": "Featured image"
         },
         "title": {
           "name": "Title",
-          "settings": {
-            "blog_show_date": {
-              "label": "Show date"
-            },
-            "blog_show_author": {
-              "label": "Show author"
-            }
-          }
+          "settings": {}
         },
         "content": {
           "name": "Content"
@@ -1764,6 +1822,64 @@
         }
       }
     },
+    "collection-seo-description": {
+      "name": "Seo description",
+      "settings": {
+        "padding_top_desktop": {
+          "label": "Padding top"
+        },
+        "padding_bottom_desktop": {
+          "label": "Padding Bottom"
+        },
+        "padding_top_mobile": {
+          "label": "Padding top(Mobile)"
+        },
+        "padding_bottom_mobile": {
+          "label": "Padding bottom(Mobile)"
+        }
+      },
+      "presets": {
+        "name": "Seo description"
+      }
+    },
+    "flow-box": {
+      "name": "Flow box",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "subtext": {
+          "label": "Subtext"
+        },
+        "padding_top_desktop": {
+          "label": "Padding top"
+        },
+        "padding_bottom_desktop": {
+          "label": "Padding bottom"
+        },
+        "padding_top_mobile": {
+          "label": "Padding top(mobile)"
+        },
+        "padding_bottom_mobile": {
+          "label": "Padding bottom(mobile)"
+        }
+      },
+      "blocks": {
+        "name": "Insta Video",
+        "cover_image": {
+          "label": "Cover image"
+        },
+        "title": {
+          "label": "Video title"
+        },
+        "video_link": {
+          "label": "insta_video_link"
+        }
+      },
+      "presets": {
+        "name": "Insta Video"
+      }
+    },
     "main-collection-product-grid": {
       "name": "Product grid",
       "settings": {
@@ -1840,6 +1956,31 @@
           "options__2": {
             "label": "2 columns"
           }
+        }
+      },
+      "blocks": {
+        "name": "Promotional image block",
+        "promotion_image_header": {
+          "label": "Promotion Block "
+        },
+        "promotion_image": {
+          "label": "Promotion image"
+        },
+        "promotion_video": {
+          "label": "Promotion Video"
+        },
+        "promotion_heading": {
+          "label": "Heading",
+          "default": "Heading Text"
+        },
+        "promotion_url": {
+          "label": "URL"
+        },
+        "promotion_position": {
+          "label": "Promotion block position"
+        },
+        "promotion_icon": {
+          "label": "Promotion block icon"
         }
       }
     },
@@ -2202,6 +2343,18 @@
               },
               "options__44": {
                 "label": "Washing"
+              },
+              "options__45": {
+                "label": "Cursor click"
+              },
+              "options__46": {
+                "label": "Receipt check"
+              },
+              "options__47": {
+                "label": "Hurricane"
+              },
+              "options__48": {
+                "label": "Temperature"
               }
             }
           }
@@ -2279,6 +2432,9 @@
               },
               "options__2": {
                 "label": "Vertical"
+              },
+              "options__3": {
+                "label": "Two Columns"
               }
             },
             "content": {
@@ -2286,6 +2442,7 @@
               "info": "Choose an icon or add an image for each column or row."
             },
             "heading": {
+              "label": "Heading",
               "info": "Leave the heading label blank to hide the icon column."
             },
             "icon_1": {
@@ -2297,6 +2454,12 @@
             "heading_1": {
               "label": "First heading"
             },
+            "text_1": {
+              "label": "First text"
+            },
+            "link_1": {
+              "label": "First link"
+            },
             "icon_2": {
               "label": "Second icon"
             },
@@ -2306,6 +2469,12 @@
             "heading_2": {
               "label": "Second heading"
             },
+            "text_2": {
+              "label": "Second text"
+            },
+            "link_2": {
+              "label": "Secondlinkt"
+            },
             "icon_3": {
               "label": "Third icon"
             },
@@ -2314,6 +2483,65 @@
             },
             "heading_3": {
               "label": "Third heading"
+            },
+            "text_3": {
+              "label": "Third text"
+            },
+            "link_3": {
+              "label": "Third link"
+            },
+            "icon_4": {
+              "label": "Fourth icon"
+            },
+            "image_4": {
+              "label": "Fourth image"
+            },
+            "heading_4": {
+              "label": "Fourth heading"
+            },
+            "text_4": {
+              "label": "Fourth text"
+            },
+            "link_4": {
+              "label": "Fourthlinkt"
+            },
+            "icon_5": {
+              "label": "Fifth icon"
+            },
+            "image_5": {
+              "label": "Fifth image"
+            },
+            "heading_5": {
+              "label": "Fifth heading"
+            },
+            "text_5": {
+              "label": "Fifth text"
+            },
+            "link_5": {
+              "label": "Fifth link"
+            },
+            "icon_6": {
+              "label": "Sixth icon"
+            },
+            "image_6": {
+              "label": "Sixth image"
+            },
+            "heading_6": {
+              "label": "Sixth heading"
+            },
+            "text_6": {
+              "label": "Sixth text"
+            },
+            "link_6": {
+              "label": "Sixth link"
+            }
+          }
+        },
+        "add_on": {
+          "name": "Add-on products",
+          "settings": {
+            "heading": {
+              "label": "Heading"
             }
           }
         }
@@ -2410,7 +2638,40 @@
       }
     },
     "main-register": {
-      "name": "Registration"
+      "name": "Registration",
+      "settings": {
+        "checkbox_header": {
+          "content": "Signup checkboxes"
+        },
+        "accepts_marketing_checkbox": {
+          "label": "Show marketing checkbox?"
+        },
+        "accepts_sms_checkbox": {
+          "label": "Show SMS checkbox?"
+        },
+        "accepts_phone_checkbox": {
+          "label": "Show phone checkbox?"
+        },
+        "accepts_post_checkbox": {
+          "label": "Show post checkbox?"
+        },
+        "accepts_marketing": {
+          "label": "Marketing checkbox text",
+          "default": "I would like to receive Homefire newsletters for exclusive discounts and news and product launches."
+        },
+        "accepts_sms": {
+          "label": "SMS checkbox text",
+          "default": "I would like to receive SMS messages from Homefire"
+        },
+        "accepts_phone": {
+          "label": "Phone checkbox text",
+          "default": "I would like to receive phonecalls from Homefire"
+        },
+        "accepts_post": {
+          "label": "Post checkbox text",
+          "default": "I would like to receive post from Homefire"
+        }
+      }
     },
     "main-reset-password": {
       "name": "Password reset"
@@ -2607,6 +2868,26 @@
         "name": "Email signup"
       }
     },
+    "highlighted-products": {
+      "name": "Highlighted Products",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "product1": {
+          "label": "Product 1"
+        },
+        "product2": {
+          "label": "Product 2"
+        },
+        "btn_text": {
+          "label": "Button Text"
+        },
+        "btn_url": {
+          "label": "Button URL"
+        }
+      }
+    },
     "email-signup-banner": {
       "name": "Email signup banner",
       "settings": {
@@ -2615,6 +2896,9 @@
         },
         "image": {
           "label": "Background image"
+        },
+        "mobile_image": {
+          "label": "Mobile image"
         },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
@@ -2707,6 +2991,14 @@
         }
       },
       "blocks": {
+        "icon": {
+          "name": "Icon",
+          "settings": {
+            "icon": {
+              "label": "Icon"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {
@@ -3345,6 +3637,21 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "step-guide": {
+      "name": "Step guide",
+      "blocks": {
+        "column": {
+          "settings": {
+            "step_number": {
+              "label": "Step number"
+            },
+            "show_arrow": {
+              "label": "Show arrow"
+            }
+          }
+        }
       }
     }
   }

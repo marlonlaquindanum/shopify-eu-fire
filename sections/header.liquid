@@ -133,7 +133,7 @@
 -%}
 
 {% if section.settings.sticky_header_type != 'none' %}
-  <sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{%  if section.settings.enable_transparent_header %} header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  <sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"  class="header-wrapper gradient color-{{ section.settings.color_scheme }}{%  if section.settings.enable_transparent_header %} header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
 {% else %}
   <div  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{%  if section.settings.enable_transparent_header %} header--transparent{%  endif %}{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
 {% endif %}
@@ -160,14 +160,23 @@
             <div class="header__heading-logo-wrapper">
               {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
               {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-              {%- assign logo_src = settings.logo -%}
-              {%- if section.settings.enable_transparent_header and settings.transparent_header_logo -%}
-                {%- assign logo_src = settings.transparent_header_logo -%}
+              {%- assign transparent_logo = settings.logo -%}
+              {%- if settings.transparent_header_logo != blank -%}
+                {%- assign transparent_logo = settings.transparent_header_logo -%}
               {%- endif -%}
               {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
               {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-              {{ logo_src | image_url: width: 600 | image_tag:
-                class: 'header__heading-logo motion-reduce',
+              {{ settings.logo | image_url: width: 600 | image_tag:
+                class: 'header__heading-logo motion-reduce header__heading-logo',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+              }}
+              {{ transparent_logo | image_url: width: 600 | image_tag:
+                class: 'header__heading-logo motion-reduce header__heading-logo-transparent',
                 widths: widths,
                 height: logo_height,
                 width: settings.logo_width,
@@ -260,10 +269,16 @@
       this.header = document.querySelector('.section-header');
       this.logo = document.querySelector('.header__heading-logo');
       this.stickyLogo = document.querySelector('.header__heading-logo-sticky');
+      this.transparentLogo = document.querySelector('.header__heading-logo-transparent');
       this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
 
       this.setHeaderHeight();
+      const firstElement = document.querySelectorAll('#MainContent .shopify-section')[0];
+      const check = !Number(window.getComputedStyle(firstElement).marginTop.replace('px', ''));
+      if(check) {
+        document.querySelector('.header--transparent').classList.remove('header--transparent');
+      }
 
       window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
 
@@ -312,6 +327,9 @@
         if(this.logo && this.stickyLogo) {
           this.logo.classList.add('hide');
           this.stickyLogo.classList.remove('hide');
+        }
+        if(this.transparentLogo) {
+          this.transparentLogo.classList.add('hide');
         } 
         if (this.preventHide) return;
         requestAnimationFrame(this.hide.bind(this));
@@ -333,6 +351,9 @@
         if(this.logo && this.stickyLogo) {
           this.logo.classList.remove('hide');
           this.stickyLogo.classList.add('hide');
+        }
+        if(this.transparentLogo) {
+          this.transparentLogo.classList.remove('hide');
         } 
         requestAnimationFrame(this.reset.bind(this));
       }
@@ -470,11 +491,17 @@
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
     },
-      {
+    {
       "type": "color_scheme",
       "id": "menu_color_scheme",
       "label": "t:sections.header.settings.menu_color_scheme.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "search_color_scheme",
+      "label": "t:sections.header.settings.search_color_scheme.label",
+      "default": "scheme-2"
     },
     {
       "type": "header",
@@ -640,6 +667,11 @@
           "label": "Image Heading 1"
         },
         {
+          "type": "richtext",
+          "id": "image_desc1",
+          "label": "Image Description 1"
+        },
+        {
           "type": "url",
           "id": "text_link1",
           "label": "Text Link 1"
@@ -657,6 +689,11 @@
           "type": "text",
           "id": "image_text2",
           "label": "Image Heading 2"
+        },
+        {
+          "type": "richtext",
+          "id": "image_desc2",
+          "label": "Image Description 2"
         },
         {
           "type": "url",

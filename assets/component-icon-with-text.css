@@ -1,0 +1,99 @@
+/* Icon with text */
+.icon-with-text {
+  --icon-size: calc(var(--font-heading-scale) * 3rem);
+  --icon-spacing: calc(var(--font-heading-scale) * 1rem);
+}
+.icon-with-text--horizontal {
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+  flex-direction: row;
+}
+.icon-with-text--vertical,
+.product__info-container .icon-with-text--vertical {
+  --icon-size: calc(var(--font-heading-scale) * 2.4rem);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icon-with-text .icon {
+  fill: transparent;
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+.icon-with-text--horizontal .icon,
+.icon-with-text--horizontal img {
+  margin-bottom: var(--icon-spacing);
+}
+.icon-with-text--vertical .icon {
+  min-height: var(--icon-size);
+  min-width: var(--icon-size);
+  margin-right: var(--icon-spacing);
+}
+.icon-with-text img {
+  height: var(--icon-size);
+  width: var(--icon-size);
+  object-fit: contain;
+}
+.icon-with-text--vertical img {
+  margin-right: var(--icon-spacing);
+}
+.icon-with-text--horizontal .h4 {
+  padding-top: calc(var(--icon-size) + var(--icon-spacing));
+  text-align: center;
+}
+.icon-with-text--horizontal svg + .h4,
+.icon-with-text--horizontal img + .h4,
+.icon-with-text--horizontal.icon-with-text--text-only .h4 {
+  padding-top: 0;
+}
+.icon-with-text__item {
+  display: flex;
+  align-items: center;
+}
+.icon-with-text--horizontal .icon-with-text__item {
+  flex-direction: column;
+  width: 33%;
+}
+.icon-with-text--vertical .icon-with-text__item {
+  margin-bottom: 1.6rem;
+}
+.icon-with-text--two-column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 2.6rem;
+  padding: 1.6rem;
+}
+.icon-with-text--two-column h4 {
+  font-size: calc(var(--font-heading-scale) * 1.4rem);
+}
+.icon-with-text--two-column .icon,
+.icon-with-text--two-column img {
+  max-width: 1.7rem;
+  height: auto;
+  margin-right: 1rem;
+}
+.icon-with-text--two-column li {
+  margin-bottom: 1.2rem;
+  width: calc(50% - 1.3rem);
+}
+.icon-with-text h2,
+.icon-with-text--two-column li span {
+  font-size: 1.4rem;
+  line-height: var(--font-body-scale);
+}
+.icon-with-text--two-column li span {
+  margin: 0;
+}
+.icon-with-text__item .text {
+  font-size: 1.2rem;
+}
+.icon-with-text .inline-richtext a {
+  color: rgb(var(--color-foregound));
+}
+.icon-with-text a {
+  font-weight: 400;
+  text-decoration: none;
+  display: inline;
+}
