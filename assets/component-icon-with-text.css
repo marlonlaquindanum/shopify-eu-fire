@@ -65,6 +65,9 @@
   column-gap: 2.6rem;
   padding: 1.6rem;
 }
+.icon-with-text--two-column h4 {
+  font-size: calc(var(--font-heading-scale) * 1.4rem);
+}
 .icon-with-text--two-column .icon,
 .icon-with-text--two-column img {
   max-width: 1.7rem;

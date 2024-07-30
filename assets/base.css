@@ -95,7 +95,7 @@ html.no-js .no-js-hidden {
 
 .page-width {
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.2rem;
 }
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
@@ -1795,11 +1795,12 @@ details[open] > .share-button__fallback {
 }
 .search__input,
 .search-modal__close-button {
+  border: 0;
   border-radius: 0;
   border-bottom: 1px solid var(--color-grey);
 }
 .field__input.search__input:focus {
-  padding: 1.5rem 1.6rem 1.5rem 5rem;
+  padding: 1.5rem 1.6rem 1.5rem 3rem;
   box-shadow: none;
   border-radius: 0;
 }
