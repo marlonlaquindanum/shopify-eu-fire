@@ -151,13 +151,7 @@
                 class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
               >
                 {% render 'icon-account' %}
-                {%- liquid
-                  if customer
-                    echo 'customer.account_fallback' | t
-                  else
-                    echo 'customer.log_in' | t
-                  endif
-                -%}
+                {{ 'customer.mobile_login' | t }}
               </a>
             {%- endif -%}
           </div>
