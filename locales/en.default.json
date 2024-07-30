@@ -431,6 +431,7 @@
     },
     "log_in": "Log in",
     "log_out": "Log out",
+    "mobile_login": "My Account",
     "login_page": {
       "cancel": "Cancel",
       "create_account": "Create an Account",
